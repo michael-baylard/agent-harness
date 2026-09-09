@@ -22,10 +22,21 @@ This repo is a **portable control plane** for Cursor (and similar agents). It en
 
 Full table: [`TOOLS-ROI.md`](TOOLS-ROI.md)
 
+## Session memory (for agents)
+
+| Doc | Use |
+|-----|-----|
+| Klarix [`harness-session-log.md`](https://github.com/michael-baylard/klarix/blob/main/docs/agents/harness-session-log.md) | What shipped, when, which vertical |
+| [`harness-vertical-backlog.md`](https://github.com/michael-baylard/klarix/blob/main/docs/agents/harness-vertical-backlog.md) | Open P0–P3 by lane |
+| [`exploratory-thinking.md`](https://github.com/michael-baylard/klarix/blob/main/docs/agents/exploratory-thinking.md) | Cold start — ingest before ideate |
+
+Append log: `python scripts/append-harness-session-log.py` (klarix repo).
+
 ## Model routing
 
 Task → best model for cost: [`docs/models/MODEL-ROUTER.md`](docs/models/MODEL-ROUTER.md)  
-Rule: `cursor-rules/model-routing.mdc`
+Rule: `cursor-rules/model-routing.mdc`  
+Local + CLI: [`docs/models/local-and-cli-harness.md`](docs/models/local-and-cli-harness.md)
 
 | Tier | Meaning |
 |------|---------|
