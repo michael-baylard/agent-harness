@@ -1,0 +1,51 @@
+# Stack personas — plug-and-play harness profiles
+# Last updated: 2026-09-09
+#
+# Each persona selects rules/skills emphasis + model-router overrides.
+# Rankings reference docs/models/MODEL-ROUTER.md and cost-catalog.json.
+
+personas:
+  nextjs-fullstack:
+    label: Next.js / TypeScript full stack
+    stacks: [nextjs, react, tailwind, vercel]
+    emphasize_skills: [web, deploy-to-vercel, vercel-react-best-practices, ship-check]
+    model_overrides:
+      ui_generation: gemini-3.7-flash-high
+      code_review: composer-2.5-fast
+      schema_sql: claude-opus-5-thinking-medium
+
+  python-data:
+    label: Python data / ML pipeline
+    stacks: [python, pandas, postgres, neon]
+    emphasize_skills: [pipeline, fast-ops, ship-check, plan-before-code]
+    model_overrides:
+      bulk_json: gemini-3.5-flash-lite
+      synthesis: claude-opus-5-thinking-medium
+      debug: diagnosing-bugs
+
+  rust-systems:
+    label: Rust systems / CLI
+    stacks: [rust, tokio, cli]
+    emphasize_skills: [fast-ops, tdd, ship-check]
+    model_overrides:
+      architecture: claude-opus-5-thinking-medium
+      implementation: composer-2.5-fast
+
+  mobile-react-native:
+    label: React Native / Expo mobile
+    stacks: [react-native, expo, typescript]
+    emphasize_skills: [web, ship-check, plan-before-code]
+    model_overrides:
+      ui_generation: gemini-3.7-flash-high
+      perf: vercel-react-best-practices
+
+  docs-only:
+    label: Docs / markdown / static site
+    stacks: [markdown, mdx, static]
+    emphasize_skills: [md-plain-language, ship-check, research-rag]
+    model_overrides:
+      prose: claude-sonnet-5-thinking-medium
+      lint: composer-2.5-fast
+
+install_hint: |
+  Copy persona block into AGENTS.md front matter or set HARNESS_PERSONA=nextjs-fullstack before install.ps1.

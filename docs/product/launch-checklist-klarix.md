@@ -4,12 +4,13 @@
 
 ## Phase 1 — Stripe (same account as klarix.ai MCP)
 
-1. **Stripe Dashboard** → Products → Add product  
-   - Name: `Agent Harness Pro`  
-   - Price: **$49 one-time** (Price ID: save to Doppler `STRIPE_HARNESS_PRO_PRICE_ID`)  
-   - Optional: **$12/mo** recurring for updates  
+1. **Stripe** — created 2026-09-09  
+   - Product: `prod_VEHM9pBFYoGBzT` — Agent Harness Pro  
+   - Price: **$49 one-time** — `price_1UDoncPtXnu58wzSmG716bcE` → Doppler `STRIPE_HARNESS_PRO_PRICE_ID`  
+   - Tax code: `txcd_10000000` (electronically supplied services)  
+   - Optional later: **$12/mo** recurring for updates  
 
-2. **Payment Link** → copy URL → store in Doppler `STRIPE_HARNESS_PRO_PAYMENT_LINK`
+2. **Payment Link** — `https://buy.stripe.com/fZuaEZ0l64Yb1Jg1iMcMM00` → Doppler `STRIPE_HARNESS_PRO_PAYMENT_LINK`
 
 3. **Customer email** → Stripe Settings → use **contact@klarix.ai** as business contact
 
