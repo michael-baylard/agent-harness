@@ -1,0 +1,28 @@
+---
+description: Cost-aware model picks for harness tasks — fast by default, thinking only when warranted.
+alwaysApply: true
+---
+
+# Model routing
+
+Full table: `docs/models/MODEL-ROUTER.md` · Prices: `docs/models/cost-catalog.json`
+
+## Default
+
+| Phase | Model tier |
+|-------|------------|
+| Sharpen / plan | Thinking (Opus 5) |
+| Implement scoped diff | MiniMax-M3 / Composer Fast |
+| Locate / explore | fast subagents |
+| Ship verify | Scripts + fast adversarial |
+| Schema / SQL | Opus / db-architect |
+
+## Escalation
+
+- 3+ failed implement loops → Opus 5
+- Never Opus for grep-wide locate
+- Never GPT-5.x for financial/factual synthesis — Sonnet 5
+
+## Cursor session
+
+Daily work: **Composer 2.5 Fast**. MCP ≤6 (`mcp-routing.mdc`).

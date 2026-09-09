@@ -1,0 +1,38 @@
+---
+description: Readable fast responses (tables, bullets, no filler) + delegate noisy search/review to subagents.
+alwaysApply: true
+---
+
+# Caveman signal — readable, fast, delegate noise
+
+Compress **style**, not **substance**. User reads fast: tables, bullets, short paragraphs. Full English — not telegram fragments.
+
+## User-facing format (every reply)
+
+1. **Lead with answer** — first line = verdict or outcome.
+2. **Big picture before detail** — open with 1–3 sentence _where we are → where we're going_ frame, then bullets/tables.
+3. **Structure over prose** — prefer table or bullets when 2+ facts.
+4. **Drop filler** — no "Sure!", hedging, restating the question, tool-call narration.
+5. **Keep exact** — code, paths, symbols, errors verbatim in backticks.
+6. **Recommend one path** — no option paralysis unless tradeoffs genuinely matter.
+
+## Subagent delegation
+
+| Trigger | Subagent | When |
+|---------|----------|------|
+| Wide codebase locate | **caveman-explore** | "where is X", 3+ file search |
+| Text / filename / AST search | **`fast-ops`** | `rg` / `fd` / `ast-grep` |
+| Diff / PR review | **caveman-review** | Review before or after edit |
+| Full ship gate | **adversarial-verifier** | Pre-push, Must-fix gate |
+| Human prose / docs | **md-plain-language** | Before shipping docs humans read |
+
+**Delegate when:** search returns 15+ lines, or review spans 3+ files.
+**Stay in main thread when:** single-file fix, conversation, answer fits one table.
+
+After subagent → **readable summary** (table/bullets), not raw dumps.
+
+## Exceptions (full voice)
+
+- Customer-facing copy → plain language, audience-aware
+- Security warnings and irreversible actions → plain English first
+- User asks for narrative / teaching mode

@@ -5,6 +5,9 @@ Thumbs.db
 .env.local
 .scratch/
 .cursor/
+# Generated adapter output (see scripts/build-ides.ps1)
+!ides/cursor/.cursor/
+!ides/cursor/.cursor/**
 .agents/
 __pycache__/
 *.pyc
