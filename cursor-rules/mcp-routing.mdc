@@ -20,9 +20,12 @@ alwaysApply: true
 
 | Profile | Enable | Disable |
 |---------|--------|---------|
-| **web** | Context7, GitHub, deploy MCP | DB, email, scrape |
-| **backend** | Context7, DB, GitHub | Browser, marketing tools |
-| **research** | Search/extract MCP, Context7 | Deploy, payments |
+| **web** | Context7, GitHub, Vercel | Neon, scrape, email |
+| **backend** | Context7, Neon, GitHub | Browser, marketing |
+| **research** | Serper *or* Exa/Tavily (one), Context7 | Deploy, payments |
+| **ops** | Vercel, GitHub, Stripe | Research scrapers |
+
+Full matrix: `docs/MCP-RECOMMENDATIONS.md` (Serper, Exa, Tavily, Obscura, Neon, Vercel, plugins).
 
 Pick **one profile** per task. Dedupe plugin vs user duplicates.
 
