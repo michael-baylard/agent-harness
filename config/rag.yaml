@@ -1,0 +1,29 @@
+# Live config — secrets via Doppler personal/prd (DATABASE_URL, VOYAGE_API_KEY)
+
+last_updated: 2026-09-09
+
+enabled: true
+
+doppler:
+  project: personal
+  config: prd
+
+neon:
+  project_id: fragrant-unit-95669740
+  table: harness_embeddings
+  vector_dims: 1024
+
+embed:
+  provider: voyage
+  model: voyage-4
+  chunk_tokens: 600
+  chunk_overlap: 80
+
+corpora:
+  research:
+    glob: "docs/**/*.md"
+    corpus_id: research
+
+query:
+  top_k: 8
+  min_score: 0.72

@@ -65,7 +65,7 @@ def main() -> int:
             h = content_hash(chunk)
             records.append((args.corpus, rel, i, chunk, h))
 
-    print(f"Found {len(files)} files → {len(records)} chunks")
+    print(f"Found {len(files)} files -> {len(records)} chunks")
     if args.dry_run:
         for r in records[:5]:
             print(f"  {r[1]}#{r[2]} ({len(r[3])} chars)")
