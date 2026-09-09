@@ -1,9 +1,9 @@
 # Sync harness into a consuming repo (full kit per IDE).
 # Usage: pwsh -File install.ps1 [-Ide <slug>] [-HarnessRoot <path>] [-TargetRoot <path>] [-DryRun]
-# Ides: cursor, claude-code, windsurf, vscode-copilot, cline, roo, continue, zed, jetbrains-junie
+# Ides: cursor, codex, claude-code, antigravity, gemini-cli, windsurf, vscode-copilot, amazon-q, openclaw, cline, roo, continue, zed, jetbrains-junie
 
 param(
-    [ValidateSet('cursor', 'claude-code', 'windsurf', 'vscode-copilot', 'cline', 'roo', 'continue', 'zed', 'jetbrains-junie')]
+    [ValidateSet('cursor', 'codex', 'claude-code', 'antigravity', 'gemini-cli', 'windsurf', 'vscode-copilot', 'amazon-q', 'openclaw', 'cline', 'roo', 'continue', 'zed', 'jetbrains-junie')]
     [string]$Ide = 'cursor',
     [string]$HarnessRoot = $PSScriptRoot,
     [string]$TargetRoot = (Get-Location).Path,
@@ -67,6 +67,27 @@ switch ($Ide) {
         Sync-Dir -Source $skillsSrc -Dest (Join-Path $TargetRoot ".cursor\skills") -Label "cursor skills"
         Sync-Dir -Source $agentsSrc -Dest (Join-Path $TargetRoot ".cursor\agents") -Label "cursor agents"
         if (Test-Path $adapterDir) { Install-CommonKit -AdapterDir $adapterDir }
+    }
+    'codex' {
+        Install-CommonKit -AdapterDir $adapterDir
+        Sync-Dir -Source (Join-Path $adapterDir ".codex\agents") -Dest (Join-Path $TargetRoot ".codex\agents") -Label "codex agents"
+    }
+    'antigravity' {
+        Install-CommonKit -AdapterDir $adapterDir
+        Sync-Dir -Source (Join-Path $adapterDir ".agents\rules") -Dest (Join-Path $TargetRoot ".agents\rules") -Label "antigravity rules"
+        Copy-FileIfExists -Source (Join-Path $adapterDir "GEMINI.md") -Dest (Join-Path $TargetRoot "GEMINI.md") -Label "GEMINI.md"
+    }
+    'gemini-cli' {
+        Install-CommonKit -AdapterDir $adapterDir
+        Copy-FileIfExists -Source (Join-Path $adapterDir "GEMINI.md") -Dest (Join-Path $TargetRoot "GEMINI.md") -Label "GEMINI.md"
+    }
+    'amazon-q' {
+        Install-CommonKit -AdapterDir $adapterDir
+        Sync-Dir -Source (Join-Path $adapterDir ".amazonq\rules") -Dest (Join-Path $TargetRoot ".amazonq\rules") -Label "amazon-q rules"
+    }
+    'openclaw' {
+        Install-CommonKit -AdapterDir $adapterDir
+        Copy-FileIfExists -Source (Join-Path $adapterDir "SOUL.md") -Dest (Join-Path $TargetRoot "SOUL.md") -Label "SOUL.md"
     }
     'claude-code' {
         Install-CommonKit -AdapterDir $adapterDir

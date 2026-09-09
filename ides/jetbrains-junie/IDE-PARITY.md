@@ -11,13 +11,13 @@
 | **MCP profiles** | `.cursor/mcp.json` + `config/mcp-profiles/` | Per-IDE MCP config templates + same profile YAML |
 | **Subagents** | Native `.cursor/agents/` dispatch | **Adapted:** `delegates/*.md` briefs + `/parallel-work` skill (new chat / mode handoff) |
 
-Only **Cursor** has a first-class subagent router. Every other IDE gets the same *workflow* via portable delegate briefs copied from `cursor-agents/` → `delegates/`. That counts as **full kit** on the matrix, not a missing column.
+**Cursor** and **Codex CLI** have first-class subagent routers (`.cursor/agents/`, `.codex/agents/`). Every other IDE gets the same *workflow* via portable delegate briefs copied from `cursor-agents/` → `delegates/`. That counts as **full kit** on the matrix, not a missing column.
 
 ## Tiers
 
 | Label | Meaning |
 |-------|---------|
-| **Full (native)** | Cursor — all four surfaces native; tested weekly in Klarix |
+| **Auto-routing** | Cursor, Codex CLI — native subagent spawn |
 | **Full (kit)** | Harness ships generated adapter folder; every column native or adapted |
 
 There are no per-IDE SKUs. Pro ($49 once) includes every adapter.

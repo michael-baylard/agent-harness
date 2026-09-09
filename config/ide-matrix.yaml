@@ -8,8 +8,16 @@
 
 ides:
   cursor:
-    tier: full-native
-    install_path: ".cursor/rules/*.mdc · .cursor/skills/ · .cursor/mcp.json"
+    tier: auto-routing
+    install_path: ".cursor/rules/*.mdc · .cursor/skills/ · .cursor/agents/ · mcp.json"
+    rules: native
+    skills: native
+    mcp_profiles: native
+    subagents: native
+
+  codex:
+    tier: auto-routing
+    install_path: "AGENTS.md · .codex/agents/ · MCP · skills/"
     rules: native
     skills: native
     mcp_profiles: native
@@ -21,6 +29,22 @@ ides:
     rules: native
     skills: native
     mcp_profiles: native
+    subagents: adapted
+
+  antigravity:
+    tier: full-kit
+    install_path: "AGENTS.md · GEMINI.md · .agents/rules/ · .agents/mcp_config.json"
+    rules: native
+    skills: native
+    mcp_profiles: native
+    subagents: adapted
+
+  gemini-cli:
+    tier: full-kit
+    install_path: "AGENTS.md · GEMINI.md · .agents/skills/"
+    rules: adapted
+    skills: native
+    mcp_profiles: adapted
     subagents: adapted
 
   windsurf:
@@ -37,6 +61,22 @@ ides:
     rules: adapted
     skills: adapted
     mcp_profiles: adapted
+    subagents: adapted
+
+  amazon-q:
+    tier: full-kit
+    install_path: ".amazonq/rules/ · AGENTS.md · cli-agents/ · delegates/"
+    rules: native
+    skills: adapted
+    mcp_profiles: native
+    subagents: adapted
+
+  openclaw:
+    tier: full-kit
+    install_path: "AGENTS.md · SOUL.md · TOOLS.md · MCP servers"
+    rules: native
+    skills: adapted
+    mcp_profiles: native
     subagents: adapted
 
   cline:

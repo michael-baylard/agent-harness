@@ -1,0 +1,9 @@
+name: backend
+enable:
+  - context7
+  - neon
+  - github
+disable:
+  - vercel
+  - tavily
+  - browser

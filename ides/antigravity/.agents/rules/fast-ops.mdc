@@ -1,0 +1,18 @@
+---
+description: Prefer rg/fd/ast-grep for search and locate over shell recursion.
+alwaysApply: false
+---
+
+# Fast CLI ops
+
+Prefer **`rg`** / **`fd`** / **`ast-grep`** over `findstr`, `grep -r`, or `Get-ChildItem -Recurse`.
+
+| Tool | Replaces | Install |
+|------|----------|---------|
+| `rg` | recursive grep, findstr | `winget install BurntSushi.ripgrep` · `brew install ripgrep` |
+| `fd` | find / recursive dir | `winget install sharkdp.fd` · `brew install fd` |
+| `ast-grep` | fragile regex refactors | `winget install ast-grep.ast-grep` · `brew install ast-grep` |
+
+Skill: `fast-ops`. See [`docs/research/references.md`](../docs/research/references.md).
+
+**Do not** use MCP for local file search when these CLIs suffice.

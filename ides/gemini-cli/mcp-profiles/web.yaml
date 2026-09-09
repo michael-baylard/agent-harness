@@ -1,0 +1,13 @@
+# MCP profile: web / Next.js — enable ≤6 servers per session
+# Wire tokens via Doppler or gitignored .env.local
+name: web
+enable:
+  - context7
+  - github
+  - vercel
+disable:
+  - neon
+  - tavily
+  - exa
+  - instantly
+  - stripe
