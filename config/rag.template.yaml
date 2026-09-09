@@ -1,0 +1,33 @@
+# Copy to consuming repo as config/rag.yaml (gitignore if secrets inline — prefer Doppler)
+
+last_updated: 2026-09-09
+
+enabled: false   # set true after Neon + Doppler wired
+
+doppler:
+  project: agent-harness   # your Doppler project name
+  config: prd
+
+neon:
+  # DATABASE_URL from Doppler — do not commit
+  table: harness_embeddings
+  vector_dims: 1024
+
+embed:
+  provider: voyage
+  model: voyage-4
+  chunk_tokens: 600
+  chunk_overlap: 80
+
+corpora:
+  research:
+    glob: "docs/**/*.md"
+    corpus_id: research
+  # Add project-specific corpora:
+  # architecture:
+  #   glob: "docs/architecture/**/*.md"
+  #   corpus_id: architecture
+
+query:
+  top_k: 8
+  min_score: 0.72   # cosine similarity floor — tune per corpus

@@ -12,6 +12,13 @@ Portable config and philosophy — no product coupling.
 | [`skills-routing.md`](skills-routing.md) | Native vs vendor invoke table |
 | [`cross-machine.md`](cross-machine.md) | Mac + Windows sync |
 | [`harness-tier-tracker.md`](harness-tier-tracker.md) | Grade tracker template |
+| [`issue-tracker.md`](issue-tracker.md) | GitHub/local issue template |
+| [`domain.md`](domain.md) | ADR + CONTEXT layout |
+| [`triage-labels.md`](triage-labels.md) | Label map for `/triage` |
+| [`skill-smells.md`](skill-smells.md) | SKILL.md quality |
+| [`token-optimization.md`](token-optimization.md) | Context cost |
+| [`../research/harness-landscape.md`](../research/harness-landscape.md) | External repo survey |
+| [`../rag/README.md`](../rag/README.md) | Optional Neon RAG |
 
 Entry for any AI: [`../../HARNESS.md`](../../HARNESS.md) · ROI: [`../../TOOLS-ROI.md`](../../TOOLS-ROI.md)
 

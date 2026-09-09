@@ -32,12 +32,14 @@ Smart model plans; cheaper model implements.
 | Topic | Invoke |
 |-------|--------|
 | Which workflow? | `/ask-harness` |
+| New repo setup | `/setup-harness` (once) |
 | Vague prompt | `/sharpen-query` |
 | Multi-file / architecture | `/plan-before-code` |
 | Multi-ticket parallel | `/parallel-work` |
 | Session end / compact | `/session-handoff` |
 | Ship / merge / done | `ship-check` |
 | Fast locate | `fast-ops` skill · `rg` / `fd` / `ast-grep` |
+| Embedded research docs | `research-rag` · Neon MCP |
 
 ### Vendor — engineering (Matt Pocock / skills.sh)
 

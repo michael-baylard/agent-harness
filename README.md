@@ -34,10 +34,18 @@ Restart Cursor. Open **HARNESS.md** — any AI should start there.
 ## Design principles
 
 1. **Context > model** — rich repo-native files beat chasing frontier models.
-2. **No product coupling** — zero domain scripts; only sync + docs.
-3. **Curated, not dumped** — ~15 skills, not marketplace sprawl.
+2. **No product coupling** — no domain pipelines; optional generic scripts only.
+3. **Curated, not dumped** — ~15 skills, not marketplace sprawl ([`docs/agents/skill-smells.md`](docs/agents/skill-smells.md)).
 4. **Verify before ship** — deterministic gates collapse model alpha.
 5. **Native when it matters** — Rust CLIs for locate; Rust/C for hot paths only ([`docs/research/concurrency-and-systems.md`](docs/research/concurrency-and-systems.md)).
+6. **Optional RAG** — Neon + Doppler + Voyage for embedded research docs ([`docs/rag/README.md`](docs/rag/README.md)).
+
+## New project checklist
+
+1. `install.ps1` → sync rules/skills
+2. `/setup-harness` → issue tracker, AGENTS.md, labels
+3. Optional: vendor skills via `npx skills add mattpocock/skills`
+4. Optional: RAG via [`docs/rag/neon-doppler-setup.md`](docs/rag/neon-doppler-setup.md)
 
 ## Optional vendor skills
 

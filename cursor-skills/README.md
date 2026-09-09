@@ -11,5 +11,7 @@ Sync via `install.ps1` → `.cursor/skills/`
 | `parallel-work` | `/parallel-work` | A | Independent parallel briefs |
 | `ship-check` | — | S | Pre-ship verification |
 | `fast-ops` | — | A | rg/fd/ast-grep locate |
+| `setup-harness` | `/setup-harness` | S | One-time repo onboarding |
+| `research-rag` | — | B | Neon pgvector semantic search |
 
 Optional vendor skills: [`config/skills-vendor.yaml`](../config/skills-vendor.yaml) · [skills.sh](https://skills.sh)

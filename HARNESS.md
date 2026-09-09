@@ -65,12 +65,25 @@ Full table: [`TOOLS-ROI.md`](TOOLS-ROI.md)
 3. Optional: install vendor skills from [`config/skills-vendor.yaml`](config/skills-vendor.yaml).
 4. Restart Cursor.
 
+## Optional: research RAG (Neon + Doppler)
+
+Not configured by default. When research docs exceed grep:
+
+1. [`docs/rag/neon-doppler-setup.md`](docs/rag/neon-doppler-setup.md) — secrets + migration
+2. `doppler run -- python scripts/embed-markdown.py --corpus research`
+3. Skill `research-rag` + Neon MCP for semantic query
+
+Requires: `DATABASE_URL`, `VOYAGE_API_KEY` in Doppler (or `.env.local`).
+
 ## Deep docs
 
 | Doc | Topic |
 |-----|-------|
 | [`docs/agents/README.md`](docs/agents/README.md) | Harness hub |
+| [`docs/research/harness-landscape.md`](docs/research/harness-landscape.md) | What other harness repos ship |
 | [`docs/agents/coding-sloth-playbook.md`](docs/agents/coding-sloth-playbook.md) | Verification + skills philosophy |
+| [`docs/agents/skill-smells.md`](docs/agents/skill-smells.md) | SKILL.md quality checklist |
 | [`docs/agents/industry-intel.md`](docs/agents/industry-intel.md) | 2026 consensus (Theo, Primeagen, Matt Pocock) |
 | [`docs/agents/systems-performance.md`](docs/agents/systems-performance.md) | Native CLIs, GPU policy, alpha distribution |
 | [`docs/research/references.md`](docs/research/references.md) | Public packages & tools by ROI |
+| [`docs/rag/README.md`](docs/rag/README.md) | Optional embeddings layer |

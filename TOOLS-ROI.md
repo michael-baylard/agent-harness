@@ -35,6 +35,8 @@
 | `ship-check` | — | S | Pre-ship verification gates | Collapses model alpha | "Is it done?" |
 | `parallel-work` | `/parallel-work` | A | Independent parallel briefs | Low context per chat vs one 200k session | 2+ unrelated tickets |
 | `fast-ops` | — | A | rg/fd/ast-grep locate | 10× faster than shell recurse | Wide grep |
+| `setup-harness` | `/setup-harness` | S | One-time repo onboarding | Avoids re-config every chat | New project |
+| `research-rag` | — | B | Semantic search over embedded docs | Beats grep on 50+ MD files | Neon+Doppler wired |
 
 ---
 
@@ -63,6 +65,11 @@
 | `skills-routing.md` | A | Native vs vendor invoke table |
 | `cross-machine.md` | B | Mac + Windows sync after pull |
 | `harness-tier-tracker.md` | B | S/A/B/C grade tracker template |
+| `issue-tracker.md` | A | GitHub/local issue template |
+| `domain.md` | A | ADR + CONTEXT layout |
+| `triage-labels.md` | A | Label map for `/triage` |
+| `skill-smells.md` | S | SKILL.md quality gates |
+| `token-optimization.md` | A | Context cost reduction |
 
 ---
 
@@ -73,6 +80,23 @@
 | `programming-ideologies.md` | S | Unix philosophy, context>model, skills as IP |
 | `concurrency-and-systems.md` | A | Semaphores, futures, tokio, when Rust/C |
 | `references.md` | S | Public packages/tools by ROI tier |
+| `harness-landscape.md` | S | Matt Pocock, Vercel, T3, 99 comparison |
+
+---
+
+## RAG stack (optional — Neon + Doppler)
+
+| Asset | Tier | What it does | Secrets (Doppler) |
+|-------|:----:|--------------|-------------------|
+| `docs/rag/README.md` | B | When/how to enable RAG | — |
+| `docs/rag/neon-doppler-setup.md` | B | Wire Neon + Voyage | `DATABASE_URL`, `VOYAGE_API_KEY` |
+| `migrations/001_harness_embeddings.sql` | B | pgvector schema | — |
+| `config/rag.template.yaml` | B | Corpus config | — |
+| `scripts/embed-markdown.py` | B | Idempotent MD ingest | same |
+| `research-rag` skill | B | Agent query pattern | Neon MCP |
+| Neon MCP | A | SQL + admin from Cursor | MCP config |
+
+Not wired by default — run setup once per account.
 
 ---
 
@@ -105,11 +129,12 @@ Install via [skills.sh](https://skills.sh) — not bundled in this repo.
 
 ## Scripts in this repo
 
-| Script | Tier | What it does | Klarix-specific? |
-|--------|:----:|--------------|:----------------:|
-| `install.ps1` | S | Sync rules + skills → `.cursor/` | No |
+| Script | Tier | What it does | Required? |
+|--------|:----:|--------------|:---------:|
+| `install.ps1` | S | Sync rules + skills → `.cursor/` | Yes |
+| `scripts/embed-markdown.py` | B | Embed markdown → Neon pgvector | Only if RAG enabled |
 
-**Intentionally excluded:** swarm orchestrators, blast-radius scripts, product pipelines — those belong in domain repos.
+**Intentionally excluded:** product pipelines, blast-radius, domain swarm orchestrators.
 
 ---
 
