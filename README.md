@@ -19,6 +19,7 @@ Portable **Cursor agent harness** — rules, skills, subagents, model router, an
 pwsh -File path/to/agent-harness/install.ps1              # Cursor (default)
 pwsh -File path/to/agent-harness/install.ps1 -Ide claude-code
 pwsh -File path/to/agent-harness/install.ps1 -Ide windsurf
+pwsh -File path/to/agent-harness/install.ps1 -Ide cline   # full kit — see ides/README.md
 
 # Or copy manually:
 #   cursor-rules/*  →  .cursor/rules/

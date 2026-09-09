@@ -1,0 +1,30 @@
+name: verify-ides-parity
+
+on:
+  push:
+    paths:
+      - "cursor-rules/**"
+      - "cursor-skills/**"
+      - "cursor-agents/**"
+      - "config/**"
+      - "ides/**"
+      - "scripts/build-ides.ps1"
+      - "scripts/verify-ides-parity.ps1"
+  pull_request:
+    paths:
+      - "cursor-rules/**"
+      - "cursor-skills/**"
+      - "cursor-agents/**"
+      - "config/**"
+      - "ides/**"
+      - "scripts/build-ides.ps1"
+      - "scripts/verify-ides-parity.ps1"
+
+jobs:
+  parity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify ides/ matches build-ides
+        shell: pwsh
+        run: pwsh -File scripts/verify-ides-parity.ps1

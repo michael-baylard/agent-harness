@@ -9,6 +9,12 @@ Thumbs.db
 !ides/cursor/.cursor/
 !ides/cursor/.cursor/**
 .agents/
+!ides/**/.agents/
+!ides/**/.agents/**
+!ides/**/.claude/
+!ides/**/.claude/**
+!ides/**/.windsurf/
+!ides/**/.windsurf/**
 __pycache__/
 *.pyc
 .env.local

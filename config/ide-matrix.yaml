@@ -1,0 +1,80 @@
+# Source of truth for IDE feature parity (native vs adapted).
+# Regenerate ides/* via scripts/build-ides.ps1 · Live matrix: klarix.ai/harness/ides
+# Last updated: 2026-09-09
+
+# native  = IDE feature, harness tested
+# adapted = harness ships files + docs; workflow differs (e.g. delegate briefs vs subagent router)
+# none    = platform gap (avoid on matrix when adapted kit exists)
+
+ides:
+  cursor:
+    tier: full-native
+    install_path: ".cursor/rules/*.mdc · .cursor/skills/ · .cursor/mcp.json"
+    rules: native
+    skills: native
+    mcp_profiles: native
+    subagents: native
+
+  claude-code:
+    tier: full-kit
+    install_path: "CLAUDE.md · .claude/skills/ · .mcp.json · delegates/"
+    rules: native
+    skills: native
+    mcp_profiles: native
+    subagents: adapted
+
+  windsurf:
+    tier: full-kit
+    install_path: ".windsurf/rules/*.md · .windsurf/skills/ · mcp.json · delegates/"
+    rules: native
+    skills: native
+    mcp_profiles: native
+    subagents: adapted
+
+  vscode-copilot:
+    tier: full-kit
+    install_path: "AGENTS.md · .github/copilot-instructions.md · .agents/skills/ · delegates/"
+    rules: adapted
+    skills: adapted
+    mcp_profiles: adapted
+    subagents: adapted
+
+  cline:
+    tier: full-kit
+    install_path: ".clinerules/ · AGENTS.md · .agents/skills/ · delegates/"
+    rules: adapted
+    skills: native
+    mcp_profiles: native
+    subagents: adapted
+
+  roo:
+    tier: full-kit
+    install_path: ".roo/rules/ · AGENTS.md · .agents/skills/ · delegates/"
+    rules: adapted
+    skills: native
+    mcp_profiles: native
+    subagents: adapted
+
+  continue:
+    tier: full-kit
+    install_path: ".continue/rules/*.md · .agents/skills/ · config.yaml · delegates/"
+    rules: adapted
+    skills: native
+    mcp_profiles: native
+    subagents: adapted
+
+  zed:
+    tier: full-kit
+    install_path: "AGENTS.md · .rules · .agents/skills/ · delegates/"
+    rules: adapted
+    skills: adapted
+    mcp_profiles: adapted
+    subagents: adapted
+
+  jetbrains-junie:
+    tier: full-kit
+    install_path: ".junie/AGENTS.md · .junie/rules/ · .agents/skills/ · delegates/"
+    rules: adapted
+    skills: adapted
+    mcp_profiles: adapted
+    subagents: adapted

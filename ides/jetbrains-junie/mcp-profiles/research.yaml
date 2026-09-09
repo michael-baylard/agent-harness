@@ -1,0 +1,10 @@
+name: research
+enable:
+  - context7
+  - exa
+  - github
+disable:
+  - vercel
+  - neon
+  - stripe
+note: Prefer Serper skill for cheap SERP volume; pick Exa OR Tavily, not both.

@@ -1,30 +1,32 @@
-# IDE adapters
+# IDE adapters (full kit)
 
 > _Last updated: 2026-09-09_
 
-One harness, many install paths. **Edit source in `cursor-rules/` and `cursor-skills/`** (Cursor canonical). Run `scripts/build-ides.ps1` to refresh generated `ides/cursor/` output. Other IDE folders document copy paths until full generation ships.
+One harness, **full kit per IDE** — rules, skills, MCP profiles, and delegate briefs (adapted subagents). Only Cursor has native subagent dispatch; every other IDE gets the same workflow via `delegates/`.
 
 | Tier | IDEs | Meaning |
 |------|------|---------|
-| **Full** | Cursor | Tested weekly — rules, skills, MCP profiles, subagents |
-| **Supported** | Claude Code, Windsurf | Native rules + skills + MCP; no subagent router |
-| **Community** | Copilot, Cline, Roo, Continue, Zed, Junie | Documented paths; not in weekly CI |
+| **Full (native)** | Cursor | All surfaces native; tested weekly |
+| **Full (kit)** | All others | Every column covered — native or adapted |
 
-Live matrix: [klarix.ai/harness/ides](https://klarix.ai/harness/ides)
+Source of truth: [`config/ide-matrix.yaml`](../config/ide-matrix.yaml) · Deep dive: [`docs/IDE-PARITY.md`](../docs/IDE-PARITY.md) · Live matrix: [klarix.ai/harness/ides](https://klarix.ai/harness/ides)
 
 ## Install
 
 ```powershell
-# Cursor (default)
-pwsh -File install.ps1
-
-# Target a specific adapter folder into your repo
+pwsh -File install.ps1                              # Cursor
 pwsh -File install.ps1 -Ide claude-code
 pwsh -File install.ps1 -Ide windsurf
+pwsh -File install.ps1 -Ide cline
+pwsh -File install.ps1 -Ide vscode-copilot
+# … roo, continue, zed, jetbrains-junie
 ```
 
-Regenerate adapter stubs after editing rules/skills:
+## Regenerate + verify
 
 ```powershell
 pwsh -File scripts/build-ides.ps1
+pwsh -File scripts/verify-ides-parity.ps1   # CI runs this on PR
 ```
+
+Edit canonical assets only: `cursor-rules/`, `cursor-skills/`, `cursor-agents/`, `config/mcp-profiles/`.
