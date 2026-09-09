@@ -32,6 +32,8 @@ Full table: [`TOOLS-ROI.md`](TOOLS-ROI.md)
 
 Append log: `python scripts/append-harness-session-log.py` (klarix repo).
 
+**Public discovery (crawlers):** [klarix.ai/llms-harness.txt](https://klarix.ai/llms-harness.txt) · [klarix.ai/harness](https://klarix.ai/harness)
+
 ## Model routing
 
 Task → best model for cost: [`docs/models/MODEL-ROUTER.md`](docs/models/MODEL-ROUTER.md)  
