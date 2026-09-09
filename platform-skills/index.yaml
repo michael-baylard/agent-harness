@@ -148,3 +148,54 @@ skills:
       - https://docs.stripe.com
       - https://docs.stripe.com/building-with-llms
     mcp_hint: Official Stripe MCP for billing ops; never log secrets
+  - slug: agent-cli
+    name: Agent CLI
+    category: cli
+    roi: S
+    priority: 18
+    docs:
+      - https://cursor.com/docs/cli
+      - https://developers.openai.com/codex
+      - https://docs.anthropic.com/en/docs/claude-code
+    mcp_hint: Same MCP profiles as IDE; install.ps1 -Ide codex|claude-code|gemini-cli
+  - slug: ollama
+    name: Ollama
+    category: local-llm
+    roi: S
+    priority: 19
+    docs:
+      - https://ollama.com
+      - https://github.com/ollama/ollama/blob/main/docs/api.md
+    mcp_hint: OpenAI-compatible http://localhost:11434/v1
+  - slug: vllm
+    name: vLLM
+    category: local-llm
+    roi: A
+    priority: 20
+    docs:
+      - https://docs.vllm.ai
+    mcp_hint: Self-hosted OpenAI server for GPU batch inference
+  - slug: helm
+    name: Helm
+    category: infrastructure
+    roi: A
+    priority: 21
+    docs:
+      - https://helm.sh/docs
+    mcp_hint: Pair with kubernetes skill
+  - slug: fastapi
+    name: FastAPI
+    category: framework
+    roi: A
+    priority: 22
+    docs:
+      - https://fastapi.tiangolo.com
+    mcp_hint: Context7 for Pydantic v2 + FastAPI
+  - slug: langgraph
+    name: LangGraph
+    category: ai
+    roi: A
+    priority: 23
+    docs:
+      - https://langchain-ai.github.io/langgraph/
+    mcp_hint: Context7; pair with ollama for local graph nodes

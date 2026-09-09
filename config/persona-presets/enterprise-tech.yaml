@@ -18,6 +18,7 @@ skills:
     - terraform
     - aws
     - kubernetes
+    - helm
     - docker
     - github-actions
     - databricks
@@ -25,6 +26,7 @@ skills:
     - dbt
     - postgres
     - neon
+    - agent-cli
 
 mcp_profile: backend
 mcp_max_servers: 4
@@ -36,4 +38,4 @@ delegates:
   ship_gate: adversarial-verifier
   parallel: true
 
-notes: Enable auditable policy layer when team SKU ships.
+notes: Local models only on approved air-gapped runners; cloud S-tier for prod paths.

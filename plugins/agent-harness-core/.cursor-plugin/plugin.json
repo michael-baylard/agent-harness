@@ -1,12 +1,24 @@
 {
   "name": "agent-harness-core",
   "displayName": "Agent Harness Core",
-  "version": "1.0.0",
-  "description": "Phase protocol, sharpen/plan/ship skills, model routing, caveman signal. Free tier — Pro at klarix.ai/harness",
+  "version": "1.1.0",
+  "description": "Phase protocol, 23 platform skills, CLI/Ollama routing, model router, ship gates. Pro stack packs at klarix.ai/harness",
   "author": {
     "name": "Klarix",
     "email": "contact@klarix.ai"
   },
   "license": "MIT",
-  "keywords": ["cursor", "agent", "harness", "skills", "rules", "workflow"]
+  "keywords": [
+    "cursor",
+    "agent",
+    "harness",
+    "skills",
+    "rules",
+    "workflow",
+    "ollama",
+    "codex",
+    "platform-skills",
+    "mcp"
+  ],
+  "homepage": "https://klarix.ai/harness"
 }

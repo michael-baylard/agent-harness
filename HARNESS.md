@@ -48,11 +48,12 @@ Rule: `cursor-rules/model-routing.mdc`
 
 ## Platform skills (Pro stack packs)
 
-Optional domain packs in [`platform-skills/`](platform-skills/): Terraform, AWS, Kubernetes, GitHub Actions, Databricks, Snowflake, BigQuery, MLflow.
+Optional domain packs in [`platform-skills/`](platform-skills/) — **23 skills** including Terraform, Docker, Next.js, Ollama, Agent CLI, LangGraph, dbt, and MCP-native Neon/Vercel/Stripe.
 
 - Catalog: [`platform-skills/index.yaml`](platform-skills/index.yaml)
 - Persona fit (enterprise vs startup vs indie): [`docs/platforms/persona-fit.md`](docs/platforms/persona-fit.md)
 - Web hub: https://klarix.ai/harness/platforms
+- CLI + local models: [`docs/models/local-and-cli-harness.md`](docs/models/local-and-cli-harness.md) · https://klarix.ai/harness/local-models
 
 Merged into `.agents/skills/` (and `.cursor/skills/` on Cursor install) via `install.ps1` / `build-ides.ps1`.
 

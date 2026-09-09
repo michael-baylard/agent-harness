@@ -2,7 +2,7 @@
 last_updated: 2026-09-09
 id: indie-dev
 label: Solo / indie
-description: Minimal friction — core skills only, small MCP footprint.
+description: Minimal friction — core skills, CLI, optional local LLM.
 
 rules:
   emphasize:
@@ -20,6 +20,8 @@ skills:
     - github-actions
     - docker
     - nextjs
+    - agent-cli
+    - ollama
 
 mcp_profile: web
 mcp_max_servers: 3
@@ -31,4 +33,4 @@ delegates:
   ship_gate: ship-check
   parallel: false
 
-notes: Add vercel, postgres, or playwright when your stack needs them.
+notes: Use ollama for drafts; cloud for ship gates. Add vercel or playwright as stack requires.

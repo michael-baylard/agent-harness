@@ -60,6 +60,17 @@ Google model-card benchmarks — use for **API** routing, not Cursor picker name
 
 Rule: `cursor-rules/subagent-arsenal.mdc` · skill `ship-check`.
 
+## Local models (Ollama / vLLM)
+
+| Task | Model class | Notes |
+|------|-------------|-------|
+| Draft JSON, explore summaries, batch classify | **Local 7–8B** (qwen2.5-coder, deepseek-coder) | `platform-skills/ollama` |
+| Multi-tenant GPU serve | **vLLM** OpenAI server | `platform-skills/vllm` |
+| Ship gate, schema, customer copy | **Cloud S-tier** | Never local-only |
+| Headless fan-out | **CLI + local** | `agent-cli` + Ollama base URL |
+
+Full guide: [`local-and-cli-harness.md`](local-and-cli-harness.md) · Hub: https://klarix.ai/harness/local-models
+
 ## Do not
 
 | Avoid | Use instead |
@@ -68,6 +79,7 @@ Rule: `cursor-rules/subagent-arsenal.mdc` · skill `ship-check`.
 | Opus for wide grep | `fast-ops` + caveman-explore |
 | Frontier model for typos | Main thread |
 | 10+ MCP + Opus on everything | ≤6 MCP profile; tier models |
+| Local 7B for production schema migrations | Opus / db-architect |
 
 ## Refresh
 

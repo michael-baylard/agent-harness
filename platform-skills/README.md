@@ -1,31 +1,37 @@
 # Platform skills (Pro stack packs)
 
-Optional domain skills for data, ML, cloud, CI, frameworks, and MCP-native platforms. Synced into `.agents/skills/` (and `.cursor/skills/` on Cursor install) alongside core harness skills.
+Optional domain skills for data, ML, cloud, CI, frameworks, CLI, local LLMs, and MCP-native platforms.
 
-## ROI catalog (17 skills)
+## ROI catalog (23 skills)
 
 | Skill | Domain | ROI |
 |-------|--------|:---:|
-| `terraform` | IaC, modules, state | S |
-| `aws` | IAM, services, Well-Architected | S |
-| `kubernetes` | Manifests, Helm, ops | S |
-| `github-actions` | CI/CD workflows | S |
-| `docker` | Images, compose, devcontainers | S |
-| `nextjs` | App Router, RSC, deploy | S |
-| `playwright` | E2E browser verification | S |
-| `databricks` | Spark, Unity Catalog | S |
-| `snowflake` | SQL, governance | S |
-| `dbt` | Models, tests, analytics eng | A |
-| `gcp-bigquery` | BigQuery SQL, slots, cost | A |
-| `postgres` | Schema, migrations, SQL | A |
-| `mlflow` | Tracking, registry, deploy | A |
-| `azure` | ARM/Bicep, Entra, Well-Architected | A |
-| `neon` | Postgres MCP (official) | S |
-| `vercel` | Deploy MCP (official) | S |
-| `stripe` | Billing MCP (official) | A |
+| `terraform` | IaC | S |
+| `aws` | Cloud | S |
+| `kubernetes` | K8s | S |
+| `github-actions` | CI/CD | S |
+| `docker` | Containers | S |
+| `nextjs` | Web framework | S |
+| `playwright` | E2E test | S |
+| `databricks` | Data & ML | S |
+| `snowflake` | Data warehouse | S |
+| `agent-cli` | Headless CLI | S |
+| `ollama` | Local LLM | S |
+| `neon` | MCP Postgres | S |
+| `vercel` | MCP deploy | S |
+| `dbt` | Analytics eng | A |
+| `gcp-bigquery` | GCP data | A |
+| `postgres` | SQL | A |
+| `mlflow` | MLOps | A |
+| `azure` | Cloud | A |
+| `stripe` | MCP billing | A |
+| `vllm` | GPU inference | A |
+| `helm` | K8s packages | A |
+| `fastapi` | Python API | A |
+| `langgraph` | Agent graphs | A |
 
-**Free vs Pro:** Public MIT repo ships routing stubs (doc links + guardrails) for SEO and install. **Pro** adds RAG wiring, quarterly depth, and `pro/stacks/*` in the private repo.
+**CLI + local harness guide:** [`docs/models/local-and-cli-harness.md`](../docs/models/local-and-cli-harness.md)
 
-Catalog: [`index.yaml`](index.yaml) · Persona fit: [`docs/platforms/persona-fit.md`](../docs/platforms/persona-fit.md) · Live hub: [klarix.ai/harness/platforms](https://klarix.ai/harness/platforms)
+Catalog: [`index.yaml`](index.yaml) · Web: [klarix.ai/harness/platforms](https://klarix.ai/harness/platforms) · [local-models hub](https://klarix.ai/harness/local-models)
 
-Install: `install.ps1` copies platform skills automatically. Rebuild IDE adapters: `pwsh -File scripts/build-ides.ps1`.
+Install: `install.ps1` · Rebuild IDEs: `pwsh -File scripts/build-ides.ps1`

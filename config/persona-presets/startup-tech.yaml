@@ -19,11 +19,13 @@ skills:
     - nextjs
     - playwright
     - vercel
+    - agent-cli
     - terraform
     - aws
     - gcp-bigquery
     - postgres
     - neon
+    - langgraph
 
 mcp_profile: web
 mcp_max_servers: 6
@@ -35,4 +37,4 @@ delegates:
   ship_gate: ship-check
   parallel: true
 
-notes: Swap mcp_profile to backend or research per sprint.
+notes: Swap mcp_profile to backend or research per sprint. vLLM optional for batch jobs.
