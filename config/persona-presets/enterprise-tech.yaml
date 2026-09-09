@@ -1,0 +1,34 @@
+# Enterprise / large-tech harness preset
+last_updated: 2026-09-09
+id: enterprise-tech
+label: Enterprise tech (FAANG-scale)
+description: Compliance-heavy rules, deep platform skills, locked MCP, verifier gates.
+
+rules:
+  emphasize:
+    - blast-radius
+    - mcp-routing
+    - no-secrets
+    - plan-before-code
+  delegate_depth: full
+
+skills:
+  core: all
+  platform:
+    - terraform
+    - aws
+    - kubernetes
+    - databricks
+    - snowflake
+
+mcp_profile: backend
+mcp_max_servers: 4
+mcp_allowlist_only: true
+
+delegates:
+  explore: caveman-explore
+  review: caveman-review
+  ship_gate: adversarial-verifier
+  parallel: true
+
+notes: Enable auditable policy layer when team SKU ships.

@@ -1,0 +1,79 @@
+# Platform skill catalog — sync to klarix web/lib/harness-platforms.ts conceptually
+last_updated: 2026-09-09
+skills:
+  - slug: terraform
+    name: Terraform
+    category: infrastructure
+    roi: S
+    priority: 1
+    docs:
+      - https://developer.hashicorp.com/terraform/docs
+      - https://registry.terraform.io
+    mcp_hint: none required; Context7 for provider schemas
+  - slug: aws
+    name: AWS
+    category: cloud
+    roi: S
+    priority: 2
+    docs:
+      - https://docs.aws.amazon.com
+      - https://docs.aws.amazon.com/wellarchitected/
+      - https://github.com/awslabs/mcp
+    mcp_hint: awslabs MCP for live API when approved
+  - slug: kubernetes
+    name: Kubernetes
+    category: infrastructure
+    roi: S
+    priority: 3
+    docs:
+      - https://kubernetes.io/docs/home/
+    mcp_hint: none; kubectl context from user env
+  - slug: github-actions
+    name: GitHub Actions
+    category: ci
+    roi: A
+    priority: 4
+    docs:
+      - https://docs.github.com/en/actions
+    mcp_hint: GitHub MCP for workflow dispatch
+  - slug: databricks
+    name: Databricks
+    category: data-ml
+    roi: A
+    priority: 5
+    docs:
+      - https://docs.databricks.com
+    mcp_hint: none; SQL/Spark via user workspace
+  - slug: snowflake
+    name: Snowflake
+    category: data
+    roi: A
+    priority: 6
+    docs:
+      - https://docs.snowflake.com
+    mcp_hint: none
+  - slug: gcp-bigquery
+    name: GCP BigQuery
+    category: data
+    roi: B
+    priority: 7
+    docs:
+      - https://cloud.google.com/bigquery/docs
+    mcp_hint: Context7 for BigQuery API
+  - slug: mlflow
+    name: MLflow
+    category: mlops
+    roi: B
+    priority: 8
+    docs:
+      - https://mlflow.org/docs/latest/index.html
+    mcp_hint: none
+deferred:
+  - slug: azure
+    reason: ship after AWS/GCP format proven
+  - slug: neon
+    reason: official Neon MCP exists — link from hub
+  - slug: vercel
+    reason: official Vercel MCP exists — link from hub
+  - slug: stripe
+    reason: official Stripe MCP exists — link from hub

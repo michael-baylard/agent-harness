@@ -1,0 +1,32 @@
+# Solo / indie harness preset (default lean)
+last_updated: 2026-09-09
+id: indie-dev
+label: Solo / indie
+description: Minimal friction — core skills only, small MCP footprint.
+
+rules:
+  emphasize:
+    - sharpen-query
+    - session-handoff
+  delegate_depth: minimal
+
+skills:
+  core:
+    - ask-harness
+    - sharpen-query
+    - ship-check
+    - fast-ops
+  platform:
+    - github-actions
+
+mcp_profile: web
+mcp_max_servers: 3
+mcp_allowlist_only: false
+
+delegates:
+  explore: caveman-explore
+  review: optional
+  ship_gate: ship-check
+  parallel: false
+
+notes: Add one platform skill matching your stack after install.

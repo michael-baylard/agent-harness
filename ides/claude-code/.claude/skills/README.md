@@ -14,4 +14,6 @@ Sync via `install.ps1` → `.cursor/skills/`
 | `setup-harness` | `/setup-harness` | S | One-time repo onboarding |
 | `research-rag` | — | B | Neon pgvector semantic search |
 
+Platform stack packs: [`platform-skills/`](../platform-skills/) (Terraform, AWS, data/ML)
+
 Optional vendor skills: [`config/skills-vendor.yaml`](../config/skills-vendor.yaml) · [skills.sh](https://skills.sh)

@@ -36,13 +36,31 @@ function Write-TextFile {
     Write-Host "Wrote $Label"
 }
 
+function Sync-PlatformSkills {
+    param([string]$DestSkillsDir, [string]$Label)
+    $platformSrc = Join-Path $Root "platform-skills"
+    if (-not (Test-Path $platformSrc)) { return }
+    Get-ChildItem -Path $platformSrc -Directory | ForEach-Object {
+        $dst = Join-Path $DestSkillsDir $_.Name
+        if ($DryRun) {
+            Write-Host "[dry-run] platform skill $($_.Name) -> $Label"
+            return
+        }
+        if (Test-Path $dst) { Remove-Item -Recurse -Force $dst }
+        Copy-Item -Path $_.FullName -Destination $dst -Recurse -Force
+        Write-Host "Merged platform skill $($_.Name) -> $Label"
+    }
+}
+
 function Build-CommonKit {
     param([string]$IdeDir, [string]$Label)
     $skillsSrc = Join-Path $Root "cursor-skills"
     $agentsSrc = Join-Path $Root "cursor-agents"
     $mcpProfilesSrc = Join-Path $Root "config\mcp-profiles"
+    $skillsDest = Join-Path $IdeDir ".agents\skills"
 
-    Sync-Tree -Source $skillsSrc -Dest (Join-Path $IdeDir ".agents\skills") -Label "$Label .agents/skills"
+    Sync-Tree -Source $skillsSrc -Dest $skillsDest -Label "$Label .agents/skills"
+    Sync-PlatformSkills -DestSkillsDir $skillsDest -Label $Label
     Sync-Tree -Source $agentsSrc -Dest (Join-Path $IdeDir "delegates") -Label "$Label delegates"
 
     if (Test-Path $mcpProfilesSrc) {

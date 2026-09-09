@@ -46,6 +46,16 @@ Rule: `cursor-rules/model-routing.mdc`
 | Wide codebase search | `caveman-explore` subagent |
 | Diff review | `caveman-review` subagent |
 
+## Platform skills (Pro stack packs)
+
+Optional domain packs in [`platform-skills/`](platform-skills/): Terraform, AWS, Kubernetes, GitHub Actions, Databricks, Snowflake, BigQuery, MLflow.
+
+- Catalog: [`platform-skills/index.yaml`](platform-skills/index.yaml)
+- Persona fit (enterprise vs startup vs indie): [`docs/platforms/persona-fit.md`](docs/platforms/persona-fit.md)
+- Web hub: https://klarix.ai/harness/platforms
+
+Merged into `.agents/skills/` (and `.cursor/skills/` on Cursor install) via `install.ps1` / `build-ides.ps1`.
+
 ## MCP policy
 
 - **≤6 MCP servers** per session — enable only what the task needs.

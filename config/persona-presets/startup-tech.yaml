@@ -1,0 +1,32 @@
+# Growth startup harness preset
+last_updated: 2026-09-09
+id: startup-tech
+label: Growth startup
+description: Ship-fast with verification contract and sprint-swappable MCP profiles.
+
+rules:
+  emphasize:
+    - ship-check
+    - plan-before-code
+    - model-routing
+  delegate_depth: balanced
+
+skills:
+  core: all
+  platform:
+    - github-actions
+    - terraform
+    - aws
+    - gcp-bigquery
+
+mcp_profile: web
+mcp_max_servers: 6
+mcp_allowlist_only: false
+
+delegates:
+  explore: caveman-explore
+  review: caveman-review
+  ship_gate: ship-check
+  parallel: true
+
+notes: Swap mcp_profile to backend or research per sprint.

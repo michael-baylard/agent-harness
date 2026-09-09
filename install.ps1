@@ -41,9 +41,27 @@ function Copy-FileIfExists {
     Write-Host "Copied $Label -> $Dest"
 }
 
+function Sync-PlatformSkillsTo {
+    param([string]$DestSkillsDir, [string]$Label)
+    $platformSrc = Join-Path $HarnessRoot "platform-skills"
+    if (-not (Test-Path $platformSrc)) { return }
+    Get-ChildItem -Path $platformSrc -Directory | ForEach-Object {
+        $dst = Join-Path $DestSkillsDir $_.Name
+        if ($DryRun) {
+            Write-Host "[dry-run] Would merge platform skill $($_.Name) -> $Label"
+            return
+        }
+        New-Item -ItemType Directory -Force -Path $DestSkillsDir | Out-Null
+        if (Test-Path $dst) { Remove-Item -Recurse -Force $dst }
+        Copy-Item -Path $_.FullName -Destination $dst -Recurse -Force
+        Write-Host "Merged platform skill $($_.Name) -> $Label"
+    }
+}
+
 function Install-CommonKit {
     param([string]$AdapterDir)
     Sync-Dir -Source (Join-Path $AdapterDir ".agents\skills") -Dest (Join-Path $TargetRoot ".agents\skills") -Label ".agents/skills"
+    Sync-PlatformSkillsTo -DestSkillsDir (Join-Path $TargetRoot ".agents\skills") -Label ".agents/skills"
     Sync-Dir -Source (Join-Path $AdapterDir "delegates") -Dest (Join-Path $TargetRoot "delegates") -Label "delegates"
     Sync-Dir -Source (Join-Path $AdapterDir "mcp-profiles") -Dest (Join-Path $TargetRoot "harness-mcp-profiles") -Label "mcp-profiles"
     Copy-FileIfExists -Source (Join-Path $AdapterDir "HARNESS.md") -Dest (Join-Path $TargetRoot "HARNESS.md") -Label "HARNESS.md"
@@ -64,7 +82,9 @@ switch ($Ide) {
         $skillsSrc = Join-Path $HarnessRoot "cursor-skills"
         $agentsSrc = Join-Path $HarnessRoot "cursor-agents"
         Sync-Dir -Source $rulesSrc -Dest (Join-Path $TargetRoot ".cursor\rules") -Label "cursor rules"
-        Sync-Dir -Source $skillsSrc -Dest (Join-Path $TargetRoot ".cursor\skills") -Label "cursor skills"
+        $cursorSkillsDest = Join-Path $TargetRoot ".cursor\skills"
+        Sync-Dir -Source $skillsSrc -Dest $cursorSkillsDest -Label "cursor skills"
+        Sync-PlatformSkillsTo -DestSkillsDir $cursorSkillsDest -Label "cursor skills"
         Sync-Dir -Source $agentsSrc -Dest (Join-Path $TargetRoot ".cursor\agents") -Label "cursor agents"
         if (Test-Path $adapterDir) { Install-CommonKit -AdapterDir $adapterDir }
     }
