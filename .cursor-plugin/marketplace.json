@@ -1,0 +1,19 @@
+{
+  "name": "agent-harness",
+  "displayName": "Agent Harness",
+  "owner": {
+    "name": "Klarix",
+    "email": "contact@klarix.ai"
+  },
+  "metadata": {
+    "description": "Portable Cursor agent harness — phase protocol, skills, model router. Pro: klarix.ai/harness",
+    "homepage": "https://klarix.ai/harness"
+  },
+  "plugins": [
+    {
+      "name": "agent-harness-core",
+      "source": "./plugins/agent-harness-core",
+      "description": "Core rules and workflow skills for any repo"
+    }
+  ]
+}

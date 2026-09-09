@@ -1,8 +1,16 @@
 # agent-harness
 
-> _Last updated: 2026-09-09_
+> _Last updated: 2026-09-09_ · **Free core (MIT)** · [**Pro $49**](https://klarix.ai/harness)
 
-Portable **Cursor agent harness** — rules, skills, subagents, and research docs distilled from years of multi-repo work. Drop into any new project; no product-specific scripts required.
+Portable **Cursor agent harness** — rules, skills, subagents, model router, and research docs. Drop into any new project.
+
+| | Free | [Pro](PRO.md) |
+|---|:---:|:---:|
+| Phase protocol + skills | yes | yes |
+| TOOLS-ROI + research docs | yes | yes |
+| Model router table | yes | + live cost catalog refresh |
+| Neon RAG + embed script | — | yes |
+| Stack packs + support | — | yes |
 
 ## Quick start
 
@@ -29,7 +37,9 @@ Restart Cursor. Open **HARNESS.md** — any AI should start there.
 | **Skills** | `cursor-skills/` | Slash-invoked workflows (`/sharpen-query`, etc.) |
 | **Subagents** | `cursor-agents/` | Delegate noisy search/review |
 | **Docs** | `docs/agents/` · `docs/research/` | Harness ops + systems/concurrency ideologies |
+| **Model router** | [`docs/models/MODEL-ROUTER.md`](docs/models/MODEL-ROUTER.md) | Task → best model for the cost |
 | **Vendor manifest** | `config/skills-vendor.yaml` | Optional Matt Pocock + Vercel skills |
+| **Pro / buy** | [`PRO.md`](PRO.md) · [klarix.ai/harness](https://klarix.ai/harness) | RAG, stacks, updates |
 
 ## Design principles
 
@@ -57,4 +67,6 @@ npx skills experimental_install   # uses config/skills-vendor.yaml pattern
 
 ## License
 
-Private — Michael Baylard. Fork for your own repos.
+**Free core:** MIT ([`LICENSE`](LICENSE)). **Pro:** commercial — see [`PRO.md`](PRO.md).
+
+Competitive rank: [`docs/research/competitive-rank.md`](docs/research/competitive-rank.md)

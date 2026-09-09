@@ -22,6 +22,11 @@ This repo is a **portable control plane** for Cursor (and similar agents). It en
 
 Full table: [`TOOLS-ROI.md`](TOOLS-ROI.md)
 
+## Model routing
+
+Task → best model for cost: [`docs/models/MODEL-ROUTER.md`](docs/models/MODEL-ROUTER.md)  
+Rule: `cursor-rules/model-routing.mdc`
+
 | Tier | Meaning |
 |------|---------|
 | **S** | Use every session — high leverage, low token cost |
@@ -73,7 +78,7 @@ Not configured by default. When research docs exceed grep:
 2. `doppler run -- python scripts/embed-markdown.py --corpus research`
 3. Skill `research-rag` + Neon MCP for semantic query
 
-Requires: `DATABASE_URL`, `VOYAGE_API_KEY` in Doppler (or `.env.local`).
+Requires: `DATABASE_URL`, `VOYAGE_API_KEY` in Doppler (or `.env.local`). **Pro license:** [`PRO.md`](PRO.md) · [klarix.ai/harness](https://klarix.ai/harness)
 
 ## Deep docs
 

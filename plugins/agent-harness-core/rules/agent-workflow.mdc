@@ -1,0 +1,12 @@
+---
+alwaysApply: true
+description: Agent phase protocol — see github.com/michael-baylard/agent-harness HARNESS.md
+---
+
+# Agent workflow (plugin stub)
+
+Full rules sync from repo: `pwsh -File install.ps1` or install **Agent Harness Core** marketplace plugin.
+
+Hub: `HARNESS.md` · Router: `/ask-harness` · Models: `docs/models/MODEL-ROUTER.md`
+
+Phase: Sharpen → Plan → Execute → Verify → Handoff. MCP ≤6.

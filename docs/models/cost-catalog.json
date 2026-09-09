@@ -1,0 +1,34 @@
+{
+  "as_of": "2026-09-09",
+  "source": "../research/docs/MODEL-INTEL.md and research/data/model-intel/catalog.json",
+  "refresh_note": "Re-copy from research repo after refresh_serper.py",
+  "prices_usd_per_1m": {
+    "gemini-3.7-flash": {"in": 0.75, "out": 3.75, "note": "intro through 2026-12-31; then 1.50/7.50"},
+    "gemini-3.6-flash": {"in": 1.50, "out": 7.50},
+    "gemini-3.5-flash": {"in": 1.50, "out": 9.00},
+    "gemini-3.5-flash-lite": {"in": 0.30, "out": 2.50},
+    "claude-opus-5": {"in": 5.0, "out": 25.0},
+    "claude-sonnet-5": {"in": 2.0, "out": 10.0},
+    "claude-haiku-4.5": {"in": 1.0, "out": 5.0},
+    "claude-fable-5": {"in": 10.0, "out": 50.0},
+    "gpt-5.6-sol": {"in": 5.0, "out": 30.0},
+    "gpt-5.6-terra": {"in": 2.5, "out": 15.0},
+    "grok-4.6": {"in": 2.0, "out": 6.0, "note": "doubles above 200k prompt"},
+    "openai/gpt-oss-20b": {"in": 0.075, "out": 0.30, "via": "groq"},
+    "openai/gpt-oss-120b": {"in": 0.15, "out": 0.60, "via": "groq"},
+    "MiniMax-M3": {"in": 0.30, "out": 1.20},
+    "MiniMax-M2.7-highspeed": {"in": 0.60, "out": 2.40},
+    "composer-2.5-fast": {"in": 0, "out": 0, "note": "Cursor subscription"},
+    "voyage-4": {"in": 0, "out": 0, "note": "embedding API — see Voyage pricing page"}
+  },
+  "harness_task_defaults": {
+    "sharpen-plan": "claude-opus-5",
+    "implement-bulk": "MiniMax-M3",
+    "visual-html": "gemini-3.7-flash",
+    "volume-classify": "gemini-3.5-flash-lite",
+    "search-synth": "openai/gpt-oss-20b",
+    "schema": "claude-opus-5",
+    "adversarial-ship": "fast-inherit",
+    "cursor-daily": "composer-2.5-fast"
+  }
+}

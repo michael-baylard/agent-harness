@@ -1,0 +1,42 @@
+# Free vs Pro asset map — single source for README, PRO.md, TOOLS-ROI
+
+last_updated: 2026-09-09
+
+free:
+  rules:
+    - cursor-rules/agent-workflow.mdc
+    - cursor-rules/caveman-signal.mdc
+    - cursor-rules/mcp-routing.mdc
+    - cursor-rules/subagent-arsenal.mdc
+    - cursor-rules/fast-ops.mdc
+    - cursor-rules/model-routing.mdc
+  skills:
+    - ask-harness
+    - sharpen-query
+    - plan-before-code
+    - session-handoff
+    - parallel-work
+    - ship-check
+    - fast-ops
+    - setup-harness
+  docs:
+    - HARNESS.md
+    - TOOLS-ROI.md
+    - docs/agents/
+    - docs/research/
+    - docs/models/MODEL-ROUTER.md
+  agents: cursor-agents/
+
+pro:
+  repo: michael-baylard/agent-harness-pro
+  price_usd: 49
+  price_monthly_usd: 12
+  stripe_product: Agent Harness Pro
+  support_email: contact@klarix.ai
+  paths:
+    - docs/rag/
+    - scripts/embed-markdown.py
+    - config/rag.yaml
+    - docs/models/cost-catalog.json
+    - pro/stacks/
+  license: PRO-LICENSE.md
