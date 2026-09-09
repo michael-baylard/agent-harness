@@ -1,0 +1,81 @@
+---
+alwaysApply: true
+description: Agent phase protocol and skill router — which slash skill or doc to use by situation.
+---
+
+# Agent workflow router
+
+Hub: `docs/agents/README.md` · ROI: `TOOLS-ROI.md` · Full routing: `docs/agents/skills-routing.md`
+
+**Unsure?** User invokes `/ask-harness` — agent may suggest it when the task is ambiguous.
+
+## Phase protocol (mandatory)
+
+| Phase | When | Action |
+|-------|------|--------|
+| **Sharpen** | Prompt is vague or multi-interpretation | `/sharpen-query` before edits |
+| **Plan** | 3+ files, API/schema coupling, unfamiliar subsystem | `/plan-before-code` — **no code until plan approved** |
+| **Spec** | Multi-session feature agreed in chat | Vendor `/to-spec` → `/to-tickets` |
+| **Execute** | One ticket / one brief | Fresh chat → `/implement` |
+| **Parallel** | 2+ independent tickets | `/parallel-work` → **one chat per brief** |
+| **Verify** | Before done / push / PR | `ship-check` · `docs/VERIFICATION-CONTRACT.md` |
+| **Handoff** | Context heavy, compact detected, or 3+ review loops | `/session-handoff` → **new chat** |
+| **Deploy** | Production promote | Vendor `/deploy-to-vercel` if applicable |
+| **Perf** | Bundle, caching, Core Web Vitals | Vendor `/vercel-optimize` · `/vercel-react-best-practices` |
+
+Smart model plans; cheaper model implements.
+
+## Skill router
+
+### Harness native
+
+| Topic | Invoke |
+|-------|--------|
+| Which workflow? | `/ask-harness` |
+| Vague prompt | `/sharpen-query` |
+| Multi-file / architecture | `/plan-before-code` |
+| Multi-ticket parallel | `/parallel-work` |
+| Session end / compact | `/session-handoff` |
+| Ship / merge / done | `ship-check` |
+| Fast locate | `fast-ops` skill · `rg` / `fd` / `ast-grep` |
+
+### Vendor — engineering (Matt Pocock / skills.sh)
+
+| Topic | Invoke |
+|-------|--------|
+| Thread → spec | `/to-spec` |
+| Spec → tickets | `/to-tickets` |
+| Build ticket | `/implement` |
+| Test-first behavior | `/tdd` |
+| Hard bug | `/diagnosing-bugs` |
+| Pre-merge review | `/code-review` |
+| Architecture survey | `/improve-codebase-architecture` |
+| Foggy huge effort | `/wayfinder` |
+| Cross-dir handoff | `/handoff` |
+| Incoming issues | `/triage` |
+
+### Subagents (delegate — don't paste dumps)
+
+| Topic | Subagent |
+|-------|----------|
+| Wide locate | `caveman-explore` |
+| Diff review | `caveman-review` |
+| Pre-ship skeptical | `adversarial-verifier` |
+| Schema / SQL | `db-architect` |
+| Human prose / docs | `md-plain-language` |
+
+Parent synthesizes tables (`caveman-signal.mdc`).
+
+## Mandatory behaviors
+
+| Rule | Behavior |
+|------|----------|
+| **Scoped verify** | Only agent-touched failures block ship |
+| **New behavior + tests** | Prefer `/tdd` when test infra exists |
+| **MCP** | ≤6 servers — `mcp-routing.mdc` profile |
+| **No auto-compact continue** | Compacted mid-task → `/session-handoff` + new chat |
+| **Subagent budget** | `caveman-explore` / `highspeed` for locate; thinking models for schema/adversarial only |
+
+## Do not
+
+- Install marketplace skill dumps · push through auto-compact · skip ship-check on done claims

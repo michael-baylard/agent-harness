@@ -1,0 +1,33 @@
+---
+description: MCP server selection — external systems only, max 6 per session.
+alwaysApply: true
+---
+
+# MCP routing
+
+## Principles
+
+| Use MCP for | Do NOT use MCP for |
+|-------------|-------------------|
+| GitHub, DB, browser, APIs, deploy targets | Coding conventions, style, repo navigation |
+| Live data you cannot read from disk | What `rg` / `Read` already solve |
+
+## Session limit
+
+**≤6 MCP servers** enabled per session. Disable the rest in Cursor Settings → MCP.
+
+## Example profiles
+
+| Profile | Enable | Disable |
+|---------|--------|---------|
+| **web** | Context7, GitHub, deploy MCP | DB, email, scrape |
+| **backend** | Context7, DB, GitHub | Browser, marketing tools |
+| **research** | Search/extract MCP, Context7 | Deploy, payments |
+
+Pick **one profile** per task. Dedupe plugin vs user duplicates.
+
+## Heuristics
+
+- Library syntax → Context7 MCP first; fallback official docs.
+- Need many cheap web lookups → dedicated search MCP or Serper-style API skill.
+- Auth failures → fix credentials before retry loops.

@@ -1,0 +1,37 @@
+# Vendor skills manifest — curated third-party packs
+# Install via https://skills.sh — not auto-run by this repo
+# Policy: curated only, never --all marketplace dump
+
+last_updated: 2026-09-09
+
+sources:
+  - repo: mattpocock/skills
+    skills:
+      - handoff
+      - to-spec
+      - to-tickets
+      - implement
+      - triage
+      - code-review
+      - tdd
+      - diagnosing-bugs
+      - improve-codebase-architecture
+      - wayfinder
+      - grill-with-docs
+      - domain-modeling
+      - writing-for-agents
+
+  - repo: vercel-labs/agent-skills
+    skills:
+      - deploy-to-vercel
+      - vercel-optimize
+      - vercel-react-best-practices
+
+skip:
+  - setup-matt-pocock-skills
+  - ask-matt
+
+notes:
+  - Installs to .agents/skills/ or ~/.cursor/skills per Cursor version
+  - Router skill: /ask-harness
+  - Harness docs: docs/agents/

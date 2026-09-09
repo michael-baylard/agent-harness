@@ -1,0 +1,32 @@
+---
+description: When to spawn subagents vs stay in main thread — cost and quality tradeoffs.
+alwaysApply: true
+---
+
+# Subagent arsenal
+
+Non-trivial work gets delegated to keep parent context small. Parent **synthesizes**; do not paste raw subagent dumps.
+
+## Spawn matrix
+
+| Action | Subagent | When |
+|--------|----------|------|
+| Wide locate | `caveman-explore` | 3+ file search, "where is X" |
+| Diff review | `caveman-review` | PR/diff audit |
+| Ship gate | `adversarial-verifier` | Skeptical pre-push |
+| Quick verify | `verifier` | Post-implement check |
+| Fast iteration | `highspeed` | Small scoped tasks |
+| Schema / SQL | `db-architect` | Migrations, table design |
+| Human prose | `md-plain-language` | Docs, README, UI strings |
+
+## Skip spawn
+
+- One-line typo fix
+- User conversation / copy decisions
+- Answer fits one short table
+
+## Budget
+
+- Prefer **fast/cheap** models for explore + review.
+- **Thinking models** only for schema, adversarial ship, architecture decisions.
+- Max **3** adversarial-verifier loops → human review.

@@ -1,0 +1,24 @@
+# Machine-specific paths — copy to consuming repo and fill in
+# Universal harness assets stay in git; this file is optional per machine
+
+last_updated: 2026-09-09
+
+machines:
+  windows-desktop:
+    home: C:\Users\bayla
+    github: C:\Users\bayla\GitHub
+    shell: powershell
+
+  mac-laptop:
+    home: ~/Users/you
+    github: ~/GitHub
+    shell: zsh
+
+# Optional shared Python (Matt Pocock pattern — one uv env, many repos)
+python:
+  shared_env: null   # e.g. C:\Users\bayla\GitHub\dev-env
+  interpreter: null  # e.g. .../dev-env/.venv/Scripts/python.exe
+
+fast_clis:
+  install_windows: winget install BurntSushi.ripgrep sharkdp.fd ast-grep.ast-grep
+  install_mac: brew install ripgrep fd ast-grep
