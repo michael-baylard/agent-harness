@@ -15,9 +15,15 @@ skills:
   core: all
   platform:
     - github-actions
+    - docker
+    - nextjs
+    - playwright
+    - vercel
     - terraform
     - aws
     - gcp-bigquery
+    - postgres
+    - neon
 
 mcp_profile: web
 mcp_max_servers: 6

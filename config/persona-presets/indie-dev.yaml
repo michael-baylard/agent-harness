@@ -18,6 +18,8 @@ skills:
     - fast-ops
   platform:
     - github-actions
+    - docker
+    - nextjs
 
 mcp_profile: web
 mcp_max_servers: 3
@@ -29,4 +31,4 @@ delegates:
   ship_gate: ship-check
   parallel: false
 
-notes: Add one platform skill matching your stack after install.
+notes: Add vercel, postgres, or playwright when your stack needs them.

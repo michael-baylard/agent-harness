@@ -18,8 +18,13 @@ skills:
     - terraform
     - aws
     - kubernetes
+    - docker
+    - github-actions
     - databricks
     - snowflake
+    - dbt
+    - postgres
+    - neon
 
 mcp_profile: backend
 mcp_max_servers: 4

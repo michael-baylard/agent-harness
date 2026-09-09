@@ -1,4 +1,4 @@
-# Platform skill catalog — sync to klarix web/lib/harness-platforms.ts conceptually
+# Platform skill catalog — sync to klarix web/lib/harness-platforms.ts
 last_updated: 2026-09-09
 skills:
   - slug: terraform
@@ -9,7 +9,7 @@ skills:
     docs:
       - https://developer.hashicorp.com/terraform/docs
       - https://registry.terraform.io
-    mcp_hint: none required; Context7 for provider schemas
+    mcp_hint: Context7 for provider schemas
   - slug: aws
     name: AWS
     category: cloud
@@ -27,60 +27,124 @@ skills:
     priority: 3
     docs:
       - https://kubernetes.io/docs/home/
-    mcp_hint: none; kubectl context from user env
+    mcp_hint: kubectl context from user env
   - slug: github-actions
     name: GitHub Actions
     category: ci
-    roi: A
+    roi: S
     priority: 4
     docs:
       - https://docs.github.com/en/actions
-    mcp_hint: GitHub MCP for workflow dispatch
+    mcp_hint: GitHub MCP for workflow run status
+  - slug: docker
+    name: Docker
+    category: infrastructure
+    roi: S
+    priority: 5
+    docs:
+      - https://docs.docker.com
+      - https://docs.docker.com/develop/dev-best-practices/
+    mcp_hint: none; prefer devcontainer or compose from repo
+  - slug: nextjs
+    name: Next.js
+    category: framework
+    roi: S
+    priority: 6
+    docs:
+      - https://nextjs.org/docs
+      - https://nextjs.org/docs/app
+    mcp_hint: Context7 for App Router; Vercel MCP for deploy
+  - slug: playwright
+    name: Playwright
+    category: framework
+    roi: S
+    priority: 7
+    docs:
+      - https://playwright.dev/docs/intro
+      - https://playwright.dev/docs/test-agents
+    mcp_hint: Playwright MCP or agent-cli skills for browser verify
   - slug: databricks
     name: Databricks
     category: data-ml
-    roi: A
-    priority: 5
+    roi: S
+    priority: 8
     docs:
       - https://docs.databricks.com
-    mcp_hint: none; SQL/Spark via user workspace
+    mcp_hint: SQL/Spark via user workspace
   - slug: snowflake
     name: Snowflake
     category: data
-    roi: A
-    priority: 6
+    roi: S
+    priority: 9
     docs:
       - https://docs.snowflake.com
     mcp_hint: none
+  - slug: dbt
+    name: dbt
+    category: data
+    roi: A
+    priority: 10
+    docs:
+      - https://docs.getdbt.com
+      - https://github.com/dbt-labs/dbt-agent-skills
+    mcp_hint: dbt MCP when workspace wired; cross-ref dbt-labs marketplace skills
   - slug: gcp-bigquery
     name: GCP BigQuery
     category: data
-    roi: B
-    priority: 7
+    roi: A
+    priority: 11
     docs:
       - https://cloud.google.com/bigquery/docs
-    mcp_hint: Context7 for BigQuery API
+    mcp_hint: Context7 for BigQuery client libraries
+  - slug: postgres
+    name: PostgreSQL
+    category: data
+    roi: A
+    priority: 12
+    docs:
+      - https://www.postgresql.org/docs/
+      - https://neon.tech/docs/ai/neon-mcp-server
+    mcp_hint: Neon MCP for schema-aware SQL (Postgres-compatible)
   - slug: mlflow
     name: MLflow
     category: mlops
-    roi: B
-    priority: 8
+    roi: A
+    priority: 13
     docs:
       - https://mlflow.org/docs/latest/index.html
     mcp_hint: none
   - slug: azure
     name: Azure
     category: cloud
-    roi: B
-    priority: 9
+    roi: A
+    priority: 14
     docs:
       - https://learn.microsoft.com/en-us/azure/
       - https://learn.microsoft.com/en-us/azure/well-architected/
     mcp_hint: Context7 for ARM/Bicep schemas
-deferred:
   - slug: neon
-    reason: official Neon MCP exists — link from hub
+    name: Neon
+    category: mcp
+    roi: S
+    priority: 15
+    docs:
+      - https://neon.tech/docs/ai/neon-mcp-server
+    mcp_hint: Official Neon MCP — SQL, migrations, branches; do not write raw SQL files when MCP is enabled
   - slug: vercel
-    reason: official Vercel MCP exists — link from hub
+    name: Vercel
+    category: mcp
+    roi: S
+    priority: 16
+    docs:
+      - https://vercel.com/docs
+      - https://vercel.com/docs/agent-resources
+    mcp_hint: Official Vercel MCP — deploy, logs, env; pair with nextjs skill
   - slug: stripe
-    reason: official Stripe MCP exists — link from hub
+    name: Stripe
+    category: mcp
+    roi: A
+    priority: 17
+    docs:
+      - https://docs.stripe.com
+      - https://docs.stripe.com/building-with-llms
+    mcp_hint: Official Stripe MCP for billing ops; never log secrets

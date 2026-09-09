@@ -26,7 +26,7 @@
 ## Engineering ROI (ship order)
 
 1. Cursor marketplace submit (free distribution)
-2. `/harness/platforms` hub + 8 platform skill pages
+2. `/harness/platforms` hub + 17 platform skill pages (SSG)
 3. Wave 1 OG image (done in klarix)
 4. Harness Pro $12/mo — **needs user approval** (keep $49 lifetime anchor)
 5. Auditable policy layer — enterprise team SKU wedge
