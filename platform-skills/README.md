@@ -12,6 +12,9 @@ Optional domain skills for data, ML, cloud, and CI platforms. Synced into `.agen
 | `snowflake` | SQL, governance | A |
 | `gcp-bigquery` | BigQuery SQL, slots, cost | B |
 | `mlflow` | Tracking, registry, deploy | B |
+| `azure` | ARM/Bicep, Entra, Well-Architected | B |
+
+**Free vs Pro:** This folder ships **routing stubs** (doc links + guardrails) in the public MIT repo for SEO and install. **Pro** adds RAG wiring, quarterly depth, and `pro/stacks/*` in the private repo. See [`docs/growth/pricing-model.md`](../docs/growth/pricing-model.md).
 
 Catalog: [`index.yaml`](index.yaml) · Persona fit: [`docs/platforms/persona-fit.md`](../docs/platforms/persona-fit.md)
 

@@ -17,9 +17,9 @@ Personas are **install-time presets** (which rules, skills, MCP profile, and del
 
 | Preset | File | Install |
 |--------|------|---------|
-| Enterprise tech | [`config/persona-presets/enterprise-tech.yaml`](../../config/persona-presets/enterprise-tech.yaml) | `install.ps1 -Persona enterprise-tech` (future flag) |
-| Startup tech | [`config/persona-presets/startup-tech.yaml`](../../config/persona-presets/startup-tech.yaml) | `install.ps1 -Persona startup-tech` |
-| Indie dev | [`config/persona-presets/indie-dev.yaml`](../../config/persona-presets/indie-dev.yaml) | default lean kit |
+| Enterprise tech | [`config/persona-presets/enterprise-tech.yaml`](../../config/persona-presets/enterprise-tech.yaml) | `install.ps1 -Ide cursor -Persona enterprise-tech` |
+| Startup tech | [`config/persona-presets/startup-tech.yaml`](../../config/persona-presets/startup-tech.yaml) | `install.ps1 -Ide cursor -Persona startup-tech` |
+| Indie dev | [`config/persona-presets/indie-dev.yaml`](../../config/persona-presets/indie-dev.yaml) | `install.ps1 -Ide cursor -Persona indie-dev` |
 
 ## Enterprise wedge (roadmap)
 

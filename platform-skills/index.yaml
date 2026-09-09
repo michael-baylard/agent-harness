@@ -68,9 +68,16 @@ skills:
     docs:
       - https://mlflow.org/docs/latest/index.html
     mcp_hint: none
-deferred:
   - slug: azure
-    reason: ship after AWS/GCP format proven
+    name: Azure
+    category: cloud
+    roi: B
+    priority: 9
+    docs:
+      - https://learn.microsoft.com/en-us/azure/
+      - https://learn.microsoft.com/en-us/azure/well-architected/
+    mcp_hint: Context7 for ARM/Bicep schemas
+deferred:
   - slug: neon
     reason: official Neon MCP exists — link from hub
   - slug: vercel
