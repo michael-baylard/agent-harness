@@ -24,7 +24,7 @@ gh repo create michael-baylard/agent-harness-pro --private --description "Agent 
 # Add PRO-LICENSE.md
 ```
 
-5. After payment (manual v1): invite buyer GitHub username as collaborator
+5. **Automated (v2):** Stripe webhook → GitHub invite to `agent-harness-pro` when checkout includes `github_username` custom field. Fallback: `/harness/success` form → `POST /api/harness/fulfill`.
 
 ## Phase 3 — klarix.ai landing (optional same sprint)
 
