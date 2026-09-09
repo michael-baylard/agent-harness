@@ -16,13 +16,17 @@ Portable **Cursor agent harness** — rules, skills, subagents, model router, an
 
 ```powershell
 # From your new repo root — clone or submodule this repo, then:
-pwsh -File path/to/agent-harness/install.ps1
+pwsh -File path/to/agent-harness/install.ps1              # Cursor (default)
+pwsh -File path/to/agent-harness/install.ps1 -Ide claude-code
+pwsh -File path/to/agent-harness/install.ps1 -Ide windsurf
 
 # Or copy manually:
 #   cursor-rules/*  →  .cursor/rules/
 #   cursor-skills/* →  .cursor/skills/
 #   cursor-agents/* →  ~/.cursor/agents/  (or project cursor-agents/)
 ```
+
+**Other IDEs:** [klarix.ai/harness/ides](https://klarix.ai/harness/ides) — one Pro purchase, every adapter. See [`ides/README.md`](ides/README.md).
 
 Restart Cursor. Open **HARNESS.md** — any AI should start there.
 
