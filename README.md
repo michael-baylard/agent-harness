@@ -64,6 +64,14 @@ Machine-readable summary: [klarix.ai/llms-harness.txt](https://klarix.ai/llms-ha
 
 ## Quick start
 
+**Skills only** (workflow + 23 platform skills):
+
+```bash
+npx skills add https://skills.sh/p/THdznNpmko1uP7OY
+```
+
+Pack page: [skills.sh/p/THdznNpmko1uP7OY](https://skills.sh/p/THdznNpmko1uP7OY). Full kit (IDE adapters, installer, HARNESS.md) still uses the clone below.
+
 ```powershell
 git clone https://github.com/michael-baylard/agent-harness
 cd your-project
