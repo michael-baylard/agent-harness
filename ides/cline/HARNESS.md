@@ -22,10 +22,23 @@ This repo is a **portable control plane** for Cursor (and similar agents). It en
 
 Full table: [`TOOLS-ROI.md`](TOOLS-ROI.md)
 
+## Session memory (for agents)
+
+| Doc | Use |
+|-----|-----|
+| Klarix [`harness-session-log.md`](https://github.com/michael-baylard/klarix/blob/main/docs/agents/harness-session-log.md) | What shipped, when, which vertical |
+| [`harness-vertical-backlog.md`](https://github.com/michael-baylard/klarix/blob/main/docs/agents/harness-vertical-backlog.md) | Open P0–P3 by lane |
+| [`exploratory-thinking.md`](https://github.com/michael-baylard/klarix/blob/main/docs/agents/exploratory-thinking.md) | Cold start — ingest before ideate |
+
+Append log: `python scripts/append-harness-session-log.py` (klarix repo).
+
+**Public discovery (crawlers):** [klarix.ai/llms-harness.txt](https://klarix.ai/llms-harness.txt) · [klarix.ai/harness](https://klarix.ai/harness)
+
 ## Model routing
 
 Task → best model for cost: [`docs/models/MODEL-ROUTER.md`](docs/models/MODEL-ROUTER.md)  
-Rule: `cursor-rules/model-routing.mdc`
+Rule: `cursor-rules/model-routing.mdc`  
+Local + CLI: [`docs/models/local-and-cli-harness.md`](docs/models/local-and-cli-harness.md)
 
 | Tier | Meaning |
 |------|---------|
@@ -48,11 +61,12 @@ Rule: `cursor-rules/model-routing.mdc`
 
 ## Platform skills (Pro stack packs)
 
-Optional domain packs in [`platform-skills/`](platform-skills/): Terraform, AWS, Kubernetes, GitHub Actions, Databricks, Snowflake, BigQuery, MLflow.
+Optional domain packs in [`platform-skills/`](platform-skills/) — **23 skills** including Terraform, Docker, Next.js, Ollama, Agent CLI, LangGraph, dbt, and MCP-native Neon/Vercel/Stripe.
 
 - Catalog: [`platform-skills/index.yaml`](platform-skills/index.yaml)
 - Persona fit (enterprise vs startup vs indie): [`docs/platforms/persona-fit.md`](docs/platforms/persona-fit.md)
 - Web hub: https://klarix.ai/harness/platforms
+- CLI + local models: [`docs/models/local-and-cli-harness.md`](docs/models/local-and-cli-harness.md) · https://klarix.ai/harness/local-models
 
 Merged into `.agents/skills/` (and `.cursor/skills/` on Cursor install) via `install.ps1` / `build-ides.ps1`.
 

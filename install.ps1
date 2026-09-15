@@ -1,5 +1,5 @@
 # Sync harness into a consuming repo (full kit per IDE).
-# Usage: pwsh -File install.ps1 [-Ide <slug>] [-Persona <preset>] [-HarnessRoot <path>] [-TargetRoot <path>] [-DryRun]
+# Usage: pwsh -File install.ps1 [-Ide <slug>] [-Persona <preset>] [-HarnessRoot <path>] [-TargetRoot <path>] [-DryRun] [-Team]
 # Ides: cursor, codex, claude-code, antigravity, gemini-cli, windsurf, vscode-copilot, amazon-q, openclaw, cline, roo, continue, zed, jetbrains-junie
 # Personas: enterprise-tech, startup-tech, indie-dev (see config/persona-presets/)
 
@@ -10,7 +10,8 @@ param(
     [string]$Persona = '',
     [string]$HarnessRoot = $PSScriptRoot,
     [string]$TargetRoot = (Get-Location).Path,
-    [switch]$DryRun
+    [switch]$DryRun,
+    [switch]$Team
 )
 
 $ErrorActionPreference = "Stop"
@@ -182,6 +183,31 @@ switch ($Ide) {
         }
         Install-CommonKit -AdapterDir $adapterDir
     }
+}
+
+if ($Team) {
+    $policySrc = Join-Path $HarnessRoot "config\team-policy.yaml"
+    if (-not (Test-Path $policySrc)) {
+        throw "Missing $policySrc — Team install requires config/team-policy.yaml"
+    }
+    $policyDestDir = Join-Path $TargetRoot "config"
+    $policyDest = Join-Path $policyDestDir "team-policy.yaml"
+    if ($DryRun) {
+        Write-Host "[dry-run] Would copy team-policy.yaml -> $policyDest"
+    }
+    else {
+        New-Item -ItemType Directory -Force -Path $policyDestDir | Out-Null
+        if (-not (Test-Path $policyDest)) {
+            Copy-Item -Path $policySrc -Destination $policyDest -Force
+            Write-Host "Copied team-policy.yaml -> $policyDest"
+        }
+        else {
+            Write-Host "Kept existing $policyDest"
+        }
+    }
+    $verify = Join-Path $HarnessRoot "scripts\verify-team-policy.ps1"
+    & pwsh -NoProfile -File $verify
+    if ($LASTEXITCODE -ne 0) { throw "team-policy.yaml failed verify-team-policy.ps1" }
 }
 
 Write-Host ""

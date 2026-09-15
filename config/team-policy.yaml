@@ -1,0 +1,21 @@
+# Team policy — shape from docs/team-policy-layer.md
+# Verify: pwsh -File scripts/verify-team-policy.ps1
+org: klarix
+seats: 5
+mcp:
+  max_servers: 6
+  profiles:
+    web: [context7, github, vercel]
+    backend: [context7, neon, github]
+    research: [tavily, exa, context7]
+    ops: [github, vercel]
+path_write:
+  - src/**
+  - docs/**
+  - config/**
+  - scripts/**
+path_deny:
+  - "**/.env*"
+  - "**/credentials*"
+  - "**/*.pem"
+  - "**/*doppler*"

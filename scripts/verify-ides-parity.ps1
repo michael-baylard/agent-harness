@@ -3,7 +3,8 @@
 
 $ErrorActionPreference = "Stop"
 $Root = Split-Path $PSScriptRoot -Parent
-$scratch = Join-Path $env:TEMP "agent-harness-ides-verify-$(Get-Random)"
+$scratchRoot = if ($env:TEMP) { $env:TEMP } elseif ($env:TMPDIR) { $env:TMPDIR } else { "/tmp" }
+$scratch = Join-Path $scratchRoot "agent-harness-ides-verify-$(Get-Random)"
 
 Write-Host "Building fresh ides/ into scratch: $scratch"
 Copy-Item -Path $Root -Destination $scratch -Recurse -Exclude @(".git", "node_modules", ".scratch")
