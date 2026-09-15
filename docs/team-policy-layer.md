@@ -24,7 +24,7 @@ Conventions live in rules/skills — not MCP.
 
 ## Allowlist shape
 
-One file per consuming repo: `config/team-policy.yaml` (name locked). Shape only — no runtime here.
+One file per consuming repo: `config/team-policy.yaml` (name locked). Install copies it with `install.ps1 -Team`. Solo `$49` omit `-Team`. CI runs `scripts/verify-team-policy.ps1`.
 
 ```yaml
 org: acme
