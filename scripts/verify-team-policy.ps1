@@ -50,14 +50,15 @@ if ($profileNames.Count -gt $profileCap) {
 
 $serverLists = [regex]::Matches($profileBlock, "\[([^\]]+)\]")
 foreach ($m in $serverLists) {
-    $names = $m.Groups[1].Value.Split(",") | ForEach-Object { $_.Trim().Trim("'").Trim('"').ToLowerInvariant() } | Where-Object { $_ }
-    $billable = $names | Where-Object { $tokenOnly -notcontains $_ }
-    foreach ($n in $names) {
+    $rawNames = $m.Groups[1].Value.Split(",") | ForEach-Object { $_.Trim().Trim("'").Trim('"') } | Where-Object { $_ }
+    foreach ($n in $rawNames) {
         if ($n -cne $n.ToLowerInvariant()) {
             Write-Error "MCP names must be lowercase (got $n). Align with config/mcp-profiles/."
             exit 1
         }
     }
+    $names = $rawNames | ForEach-Object { $_.ToLowerInvariant() }
+    $billable = $names | Where-Object { $tokenOnly -notcontains $_ }
     if ($billable.Count -gt 6) {
         Write-Error "Profile exceeds 6 MCP servers (excluding sqz/tracepulse): $($billable -join ', ')"
         exit 1
