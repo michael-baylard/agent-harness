@@ -1,3 +1,9 @@
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "pyyaml>=6.0.3",
+# ]
+# ///
 """Emit persona preset JSON for install.ps1. Usage: python read_persona_preset.py <id> [harness_root]"""
 from __future__ import annotations
 

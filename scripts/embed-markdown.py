@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "voyageai>=0.5.0",
+#     "psycopg[binary]>=3.3.6",
+# ]
+# ///
 """Optional: embed markdown into Neon harness_embeddings. Requires voyageai + psycopg.
 
 Usage:
