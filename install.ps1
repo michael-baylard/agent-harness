@@ -47,13 +47,30 @@ function Copy-FileIfExists {
 
 function Get-PersonaPresetJson {
     param([string]$PersonaId)
-    $py = "C:\Users\bayla\GitHub\dev-env\.venv\Scripts\python.exe"
     $script = Join-Path $HarnessRoot "scripts\read_persona_preset.py"
     if (-not (Test-Path $script)) {
         Write-Warning "Missing $script — skip persona preset"
         return $null
     }
-    $json = & $py $script $PersonaId $HarnessRoot 2>&1
+
+    $json = $null
+    if (Get-Command uv -ErrorAction SilentlyContinue) {
+        $json = & uv run $script $PersonaId $HarnessRoot 2>&1
+    } elseif ($env:VIRTUAL_ENV -and (Test-Path (Join-Path $env:VIRTUAL_ENV "Scripts\python.exe"))) {
+        $py = Join-Path $env:VIRTUAL_ENV "Scripts\python.exe"
+        $json = & $py $script $PersonaId $HarnessRoot 2>&1
+    } elseif ($env:VIRTUAL_ENV -and (Test-Path (Join-Path $env:VIRTUAL_ENV "bin/python"))) {
+        $py = Join-Path $env:VIRTUAL_ENV "bin/python"
+        $json = & $py $script $PersonaId $HarnessRoot 2>&1
+    } elseif (Get-Command python3 -ErrorAction SilentlyContinue) {
+        $json = & python3 $script $PersonaId $HarnessRoot 2>&1
+    } elseif (Get-Command python -ErrorAction SilentlyContinue) {
+        $json = & python $script $PersonaId $HarnessRoot 2>&1
+    } else {
+        Write-Warning "No Python or uv runner found to execute $script"
+        return $null
+    }
+
     if ($LASTEXITCODE -ne 0) {
         Write-Warning "Persona preset failed: $json"
         return $null
