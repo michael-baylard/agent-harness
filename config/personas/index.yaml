@@ -10,7 +10,7 @@ personas:
     stacks: [nextjs, react, tailwind, vercel]
     emphasize_skills: [web, deploy-to-vercel, vercel-react-best-practices, ship-check]
     model_overrides:
-      ui_generation: gemini-3.7-flash-high
+      ui_generation: gemini-3.8-flash-high
       code_review: composer-2.5-fast
       schema_sql: claude-opus-5-thinking-medium
 
@@ -36,7 +36,7 @@ personas:
     stacks: [react-native, expo, typescript]
     emphasize_skills: [web, ship-check, plan-before-code]
     model_overrides:
-      ui_generation: gemini-3.7-flash-high
+      ui_generation: gemini-3.8-flash-high
       perf: vercel-react-best-practices
 
   docs-only:

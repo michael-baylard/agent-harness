@@ -14,18 +14,18 @@
 | 4 | Wide locate / explore subagent | **fast** (Composer / Haiku class) | Noise delegation | 1–5 / 5–25 | **S** |
 | 5 | Adversarial ship gate | **fast** + deterministic scripts | Collapse alpha; don't re-prompt | low | **S** |
 | 6 | Human prose / docs | **md-plain-language** (Sonnet class) | Readable output | 2 / 10 | A |
-| 7 | HTML / dashboard visual | **gemini-3.7-flash** + visual critic | Best $ for UI gen (intro pricing) | 0.75 / 3.75* | **S** |
+| 7 | HTML / dashboard visual | **gemini-3.8-flash** + visual critic | Best $ for UI gen (intro pricing) | 0.75 / 3.75* | **S** |
 | 8 | Hard stuck loop (3+ fails) | **Claude Opus 5** | Highest agentic bar | 5 / 25 | A |
 | 9 | Schema / migrations | **Opus 5** or `db-architect` | Correctness > cost | 5 / 25 | A |
 | 10 | Volume JSON classify | **gemini-3.5-flash-lite** | Cheapest reliable volume | 0.30 / 2.50 | **S** |
 | 11 | Research fan-out / SERP synth | **Groq gpt-oss-20b** | ~1000 tok/s | 0.075 / 0.30 | **S** |
-| 12 | Long PDF / doc synthesis | **gemini-3.7-flash** | 1M ctx; strong AutomationBench | 0.75 / 3.75* | **S** |
+| 12 | Long PDF / doc synthesis | **gemini-3.8-flash** | 1M ctx; strong AutomationBench | 0.75 / 3.75* | **S** |
 | 13 | Finance / capital $ facts | **Claude Sonnet 5** | GDPVal-AA Elo edge; never GPT-5.x for $ | 2 / 10 | A |
 | 14 | Terminal / shell heavy | **GPT-5.6 Sol** | Routing convention | 5 / 30 | B |
 | 15 | Brainstorm in Cursor limits | **Grok 4.6 High Fast** | Strong under 200k ctx | 2 / 6 | A |
 | 16 | Embeddings (RAG) | **Voyage voyage-4** | Not an LLM — 1024-dim | API per token | A |
 
-\* Gemini 3.7 Flash intro through 2026-12-31; then 1.50 / 7.50.
+\* gemini-3.8-flash intro 0.75 / 3.75 through 2026-12-31. gemini-3.7-flash remains the fallback.
 
 ## Value tier legend
 

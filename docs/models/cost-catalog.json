@@ -4,6 +4,7 @@
   "refresh_note": "Re-copy from research repo after refresh_serper.py",
   "prices_usd_per_1m": {
     "gemini-3.7-flash": {"in": 0.75, "out": 3.75, "note": "intro through 2026-12-31; then 1.50/7.50"},
+    "gemini-3.8-flash": {"in": 0.75, "out": 3.75, "note": "intro through 2026-12-31"},
     "gemini-3.6-flash": {"in": 1.50, "out": 7.50},
     "gemini-3.5-flash": {"in": 1.50, "out": 9.00},
     "gemini-3.5-flash-lite": {"in": 0.30, "out": 2.50},
@@ -24,7 +25,7 @@
   "harness_task_defaults": {
     "sharpen-plan": "claude-opus-5",
     "implement-bulk": "MiniMax-M3",
-    "visual-html": "gemini-3.7-flash",
+    "visual-html": "gemini-3.8-flash",
     "volume-classify": "gemini-3.5-flash-lite",
     "search-synth": "openai/gpt-oss-20b",
     "schema": "claude-opus-5",
