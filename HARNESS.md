@@ -4,6 +4,8 @@
 
 This repo is a **portable control plane** for Cursor (and similar agents). It encodes *how* to work, not *what* product to build.
 
+Architecture decisions: [`docs/adr/`](docs/adr/) — open the ADR whose title names the code you are changing; skip status superseded.
+
 ## Phase protocol (mandatory)
 
 | Phase | When | Action |
