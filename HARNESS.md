@@ -4,7 +4,10 @@
 
 This repo is a **portable control plane** for Cursor (and similar agents). It encodes *how* to work, not *what* product to build.
 
-Architecture decisions: [`docs/adr/`](docs/adr/) — open the ADR whose title names the code you are changing; skip status superseded.
+Architecture decisions live in [`docs/adr/`](docs/adr/). Open the record whose path matches the code you are changing. Do not import this folder. Skip status `superseded`.
+
+- [Ship routing stubs in the public repo](docs/adr/0001-ship-routing-stubs-in-the-public-repo.md) — `platform-skills/**`
+- [Reserve MCP for external systems](docs/adr/0002-reserve-mcp-for-external-systems.md) — `cursor-rules/mcp-routing.mdc`
 
 ## Phase protocol (mandatory)
 
