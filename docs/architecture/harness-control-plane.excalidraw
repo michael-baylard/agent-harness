@@ -1,0 +1,380 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "excalidraw-cli",
+  "elements": [
+    {
+      "type": "rectangle",
+      "id": "ide_layer",
+      "x": 50,
+      "y": 60,
+      "width": 1100,
+      "height": 130,
+      "backgroundColor": "#dbe4ff",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "ide_layer_label",
+          "type": "text"
+        }
+      ],
+      "roughness": 2
+    },
+    {
+      "type": "text",
+      "id": "ide_layer_label",
+      "x": 60,
+      "y": 70,
+      "width": 1080,
+      "height": 110,
+      "text": "IDE & Agent Interfaces (Antigravity, Cursor, Claude Code, Cline, Windsurf)",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "ide_layer",
+      "strokeColor": "#1971c2"
+    },
+    {
+      "type": "rectangle",
+      "id": "ide1",
+      "x": 90,
+      "y": 95,
+      "width": 220,
+      "height": 75,
+      "backgroundColor": "#a5d8ff",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "ide1_label",
+          "type": "text"
+        }
+      ],
+      "roughness": 2
+    },
+    {
+      "type": "text",
+      "id": "ide1_label",
+      "x": 100,
+      "y": 105,
+      "width": 200,
+      "height": 55,
+      "text": "Antigravity IDE\n(AGY 2.0)",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "ide1"
+    },
+    {
+      "type": "rectangle",
+      "id": "ide2",
+      "x": 370,
+      "y": 95,
+      "width": 220,
+      "height": 75,
+      "backgroundColor": "#a5d8ff",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "ide2_label",
+          "type": "text"
+        }
+      ],
+      "roughness": 2
+    },
+    {
+      "type": "text",
+      "id": "ide2_label",
+      "x": 380,
+      "y": 105,
+      "width": 200,
+      "height": 55,
+      "text": "Claude Code CLI\n(~/.local/bin/claude)",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "ide2"
+    },
+    {
+      "type": "rectangle",
+      "id": "ide3",
+      "x": 650,
+      "y": 95,
+      "width": 220,
+      "height": 75,
+      "backgroundColor": "#a5d8ff",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "ide3_label",
+          "type": "text"
+        }
+      ],
+      "roughness": 2
+    },
+    {
+      "type": "text",
+      "id": "ide3_label",
+      "x": 660,
+      "y": 105,
+      "width": 200,
+      "height": 55,
+      "text": "Cursor Rules\n(.cursorrules / mdc)",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "ide3"
+    },
+    {
+      "type": "rectangle",
+      "id": "ide4",
+      "x": 910,
+      "y": 95,
+      "width": 200,
+      "height": 75,
+      "backgroundColor": "#a5d8ff",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "ide4_label",
+          "type": "text"
+        }
+      ],
+      "roughness": 2
+    },
+    {
+      "type": "text",
+      "id": "ide4_label",
+      "x": 920,
+      "y": 105,
+      "width": 180,
+      "height": 55,
+      "text": "JetBrains / VS Code\n(Cross-IDE parity)",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "ide4"
+    },
+    {
+      "type": "rectangle",
+      "id": "protocol",
+      "x": 250,
+      "y": 240,
+      "width": 700,
+      "height": 110,
+      "backgroundColor": "#e5dbff",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "protocol_label",
+          "type": "text"
+        }
+      ],
+      "roughness": 2
+    },
+    {
+      "type": "text",
+      "id": "protocol_label",
+      "x": 260,
+      "y": 250,
+      "width": 680,
+      "height": 90,
+      "text": "Phase Protocol & Control Plane Engine\nSharpen ➔ Plan ➔ Spec ➔ Execute ➔ Parallel ➔ Verify (Ship-Check) ➔ Handoff",
+      "fontSize": 17,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "protocol",
+      "strokeColor": "#6741d9"
+    },
+    {
+      "type": "rectangle",
+      "id": "delegates",
+      "x": 100,
+      "y": 400,
+      "width": 450,
+      "height": 130,
+      "backgroundColor": "#c3fae8",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "delegates_label",
+          "type": "text"
+        }
+      ],
+      "roughness": 2
+    },
+    {
+      "type": "text",
+      "id": "delegates_label",
+      "x": 110,
+      "y": 410,
+      "width": 430,
+      "height": 110,
+      "text": "Platform Skills & Delegates\n• Ship-Check pre-verification\n• Custom agent delegates & MCP profiles\n• Model router (Flash, Sonnet, Opus)",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "delegates"
+    },
+    {
+      "type": "rectangle",
+      "id": "roi_rules",
+      "x": 650,
+      "y": 400,
+      "width": 450,
+      "height": 130,
+      "backgroundColor": "#ffd8a8",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "roi_rules_label",
+          "type": "text"
+        }
+      ],
+      "roughness": 2
+    },
+    {
+      "type": "text",
+      "id": "roi_rules_label",
+      "x": 660,
+      "y": 410,
+      "width": 430,
+      "height": 110,
+      "text": "ROI & Architecture Policies\n• ADR records enforcement\n• Context window compaction hygiene\n• Cost-per-ticket limits",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "roi_rules"
+    },
+    {
+      "type": "arrow",
+      "id": "a1",
+      "x": 600,
+      "y": 190,
+      "width": 0,
+      "height": 50,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          50
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "ide_layer",
+        "fixedPoint": [
+          0.5,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "protocol",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      },
+      "roughness": 2
+    },
+    {
+      "type": "arrow",
+      "id": "a2",
+      "x": 450,
+      "y": 350,
+      "width": -125,
+      "height": 50,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -125,
+          50
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "protocol",
+        "fixedPoint": [
+          0.3,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "delegates",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      },
+      "roughness": 2
+    },
+    {
+      "type": "arrow",
+      "id": "a3",
+      "x": 750,
+      "y": 350,
+      "width": 125,
+      "height": 50,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          125,
+          50
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "protocol",
+        "fixedPoint": [
+          0.7,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "roi_rules",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      },
+      "roughness": 2
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": null
+  },
+  "files": {}
+}

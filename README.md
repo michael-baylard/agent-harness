@@ -189,3 +189,13 @@ Competitive rank vs other harness repos: [`docs/research/competitive-rank.md`](d
 **Free core:** MIT ([`LICENSE`](LICENSE)).
 
 **Pro:** commercial — private repo `agent-harness-pro`. See [`PRO.md`](PRO.md) · [`PRO-LICENSE.md`](https://github.com/michael-baylard/agent-harness-pro/blob/main/PRO-LICENSE.md) (after invite).
+
+## 🎨 Architecture & Diagramming (Excalidraw)
+
+Interactive Excalidraw diagrams are integrated into this repository:
+- **Canvas Editor**: Open `docs/architecture/*.excalidraw` directly in **Antigravity IDE** or VS Code using the embedded [`pomdtr.excalidraw-editor`](https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor) canvas.
+- **CLI Utilities**:
+  ```bash
+  excalidraw ref                         # Reference color palettes and element schemas
+  excalidraw create schema.json -o out.excalidraw  # Programmatic diagram generation
+  ```
