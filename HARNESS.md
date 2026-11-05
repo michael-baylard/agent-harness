@@ -58,6 +58,8 @@ Local + CLI: [`docs/models/local-and-cli-harness.md`](docs/models/local-and-cli-
 | Unsure which workflow | `/ask-harness` |
 | Fuzzy ask | `/sharpen-query` |
 | Big multi-file change | `/plan-before-code` |
+| New or existing Jira ticket | `ticket-run` |
+| Matteo papers, 5 Nov 2026 | [`docs/learning/matteo-2026-11-05.md`](docs/learning/matteo-2026-11-05.md) |
 | End session cleanly | `/session-handoff` |
 | Parallel independent tasks | `/parallel-work` |
 | "Is this done?" | `ship-check` |
