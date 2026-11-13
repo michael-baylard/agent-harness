@@ -55,17 +55,17 @@ function Get-PersonaPresetJson {
 
     $json = $null
     if (Get-Command uv -ErrorAction SilentlyContinue) {
-        $json = & uv run $script $PersonaId $HarnessRoot 2>&1
+        $json = & uv run $script $PersonaId $HarnessRoot
     } elseif ($env:VIRTUAL_ENV -and (Test-Path (Join-Path $env:VIRTUAL_ENV "Scripts\python.exe"))) {
         $py = Join-Path $env:VIRTUAL_ENV "Scripts\python.exe"
-        $json = & $py $script $PersonaId $HarnessRoot 2>&1
+        $json = & $py $script $PersonaId $HarnessRoot
     } elseif ($env:VIRTUAL_ENV -and (Test-Path (Join-Path $env:VIRTUAL_ENV "bin/python"))) {
         $py = Join-Path $env:VIRTUAL_ENV "bin/python"
-        $json = & $py $script $PersonaId $HarnessRoot 2>&1
+        $json = & $py $script $PersonaId $HarnessRoot
     } elseif (Get-Command python3 -ErrorAction SilentlyContinue) {
-        $json = & python3 $script $PersonaId $HarnessRoot 2>&1
+        $json = & python3 $script $PersonaId $HarnessRoot
     } elseif (Get-Command python -ErrorAction SilentlyContinue) {
-        $json = & python $script $PersonaId $HarnessRoot 2>&1
+        $json = & python $script $PersonaId $HarnessRoot
     } else {
         Write-Warning "No Python or uv runner found to execute $script"
         return $null
